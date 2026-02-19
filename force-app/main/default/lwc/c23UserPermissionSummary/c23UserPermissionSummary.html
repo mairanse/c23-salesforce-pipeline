@@ -26,6 +26,35 @@
                     </dl>
                 </div>
             </div>
+
+            <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                <template if:true={isLoadingAssignments}>
+                    <lightning-spinner alternative-text="Loading assignment summary" size="small"></lightning-spinner>
+                </template>
+
+                <template if:true={assignmentError}>
+                    <div class="slds-text-color_error slds-m-bottom_small">{assignmentError}</div>
+                </template>
+
+                <template if:true={hasAssignmentSections}>
+                    <lightning-accordion allow-multiple-sections-open active-section-name={openSectionNames}>
+                        <template for:each={assignmentSections} for:item="section">
+                            <lightning-accordion-section key={section.name} name={section.name} label={section.title}>
+                                <template if:true={section.hasItems}>
+                                    <ul class="slds-list_dotted slds-p-left_medium">
+                                        <template for:each={section.items} for:item="item">
+                                            <li key={item.id}>{item.name}</li>
+                                        </template>
+                                    </ul>
+                                </template>
+                                <template if:false={section.hasItems}>
+                                    <div class="slds-text-color_weak">{section.emptyMessage}</div>
+                                </template>
+                            </lightning-accordion-section>
+                        </template>
+                    </lightning-accordion>
+                </template>
+            </div>
         </template>
     </lightning-card>
 </template>
