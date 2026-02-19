@@ -1,20 +1,21 @@
 # C23 Permission Studio – Agent Build Spec
 
 ## Feature: User Permission Summary (v1)
-Build a new tool that lets an admin search for a Salesforce User and view a summarized breakdown of the user’s permissions across:
+
+Build a new tool that lets an admin search for a Salesforce User and view a summarized breakdown of their permissions across:
 - Profile
-- Permission Sets (assigned)
-- Permission Set Groups (assigned)
-- Muting Permission Sets (where applicable)
+- Permission Sets
+- Permission Set Groups
+- Muting Permission Sets (later)
 
-### Constraints
-- Net-new only. Do not modify existing components/pages yet.
-- All LWC names must be prefixed with c23.
-- All Apex must be prefixed c23_.
+## Constraints
+- Net-new only.
+- All LWC must be prefixed with c23.
+- All Apex must be prefixed with c23_.
 - Compute values in JS (no template expressions).
-- Keep logging lightweight.
+- Always work in small commits.
+- After meaningful change: run ./scripts/deploy-fast.sh dev
+- Never commit directly to main.
 
-### Deliverables
-- LWC: c23UserPermissionSummary (container + results)
-- LWC: c23UserLookup (typeahead search)
-- Apex: c23_UserPermissionSummaryService (user search + summary endpoint)
+## Current Objective
+Implement user search typeahead + selected user header display.
