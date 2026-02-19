@@ -1,3 +1,31 @@
 <template>
-    
+    <lightning-card title="User Permission Summary">
+        <div class="slds-p-around_medium">
+            <c-c23-user-lookup onuserselected={handleUserSelected}></c-c23-user-lookup>
+        </div>
+
+        <template if:true={selectedUser}>
+            <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                <div class="slds-box slds-theme_default">
+                    <h2 class="slds-text-heading_small slds-m-bottom_small">Selected User</h2>
+                    <dl class="slds-list_horizontal slds-wrap">
+                        <dt class="slds-item_label slds-truncate slds-text-color_weak" title="Name">Name:</dt>
+                        <dd class="slds-item_detail slds-truncate slds-m-bottom_x-small">{selectedUser.name}</dd>
+
+                        <dt class="slds-item_label slds-truncate slds-text-color_weak" title="Username">Username:</dt>
+                        <dd class="slds-item_detail slds-truncate slds-m-bottom_x-small">{selectedUser.username}</dd>
+
+                        <dt class="slds-item_label slds-truncate slds-text-color_weak" title="Email">Email:</dt>
+                        <dd class="slds-item_detail slds-truncate slds-m-bottom_x-small">{selectedUser.email}</dd>
+
+                        <dt class="slds-item_label slds-truncate slds-text-color_weak" title="Active">Active:</dt>
+                        <dd class="slds-item_detail slds-truncate slds-m-bottom_x-small">{activeLabel}</dd>
+
+                        <dt class="slds-item_label slds-truncate slds-text-color_weak" title="Profile">Profile:</dt>
+                        <dd class="slds-item_detail slds-truncate">{selectedUser.profileName}</dd>
+                    </dl>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
 </template>

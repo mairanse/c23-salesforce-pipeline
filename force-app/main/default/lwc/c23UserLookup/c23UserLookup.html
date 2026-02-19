@@ -1,3 +1,40 @@
 <template>
-    
+    <div class="slds-form-element">
+        <lightning-input
+            type="search"
+            label="Search user"
+            placeholder="Type name, username, or email"
+            value={query}
+            oninput={handleInput}
+            onfocus={handleFocus}
+            onblur={handleBlur}
+        ></lightning-input>
+    </div>
+
+    <template if:true={shouldShowDropdown}>
+        <div class="slds-box slds-m-top_x-small slds-p-around_none">
+            <template if:true={errorMessage}>
+                <div class="slds-text-color_error slds-p-around_small">{errorMessage}</div>
+            </template>
+
+            <template if:true={hasResults}>
+                <ul class="slds-has-dividers_bottom-space" role="listbox">
+                    <template for:each={results} for:item="user">
+                        <li key={user.id} class="slds-item">
+                            <button
+                                class="slds-button slds-button_reset slds-text-align_left slds-p-around_small slds-size_full"
+                                type="button"
+                                data-id={user.id}
+                                onclick={handleSelect}
+                            >
+                                <div class="slds-text-title_bold">{user.name}</div>
+                                <div class="slds-text-body_small">{user.username}</div>
+                                <div class="slds-text-body_small">{user.email}</div>
+                            </button>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+        </div>
+    </template>
 </template>
