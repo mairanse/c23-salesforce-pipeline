@@ -1,0 +1,71 @@
+.c23-audit {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.c23-audit__title {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.c23-audit__subtitle {
+    color: #3e3e3c;
+}
+
+.c23-audit__section {
+    border: 1px solid #d8dde6;
+    border-radius: 0.4rem;
+    padding: 0.6rem;
+    background: #fbfcff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.c23-audit__heading {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #16325c;
+}
+
+.c23-audit__controls {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) auto auto auto;
+    gap: 0.6rem;
+    align-items: end;
+}
+
+.c23-audit__table-wrap {
+    max-height: 16rem;
+    overflow: auto;
+}
+
+.density-comfortable table th,
+.density-comfortable table td {
+    padding: 0.45rem 0.5rem;
+    font-size: 0.82rem;
+}
+
+.density-compact table th,
+.density-compact table td {
+    padding: 0.24rem 0.38rem;
+    font-size: 0.76rem;
+}
+
+.c23-audit__empty {
+    border: 1px dashed #d8dde6;
+    border-radius: 0.35rem;
+    padding: 0.35rem 0.5rem;
+    color: #3e3e3c;
+}
+
+.c23-audit__error {
+    color: #ba0517;
+}
+
+@media (max-width: 1080px) {
+    .c23-audit__controls {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,185 @@
+<template>
+    <div class={shellClass}>
+        <div class={leftPaneClass}>
+            <div class="c23-shell__left-header">
+                <h2 class="c23-shell__title">{labels.leftPaneTitle}</h2>
+                <lightning-button-icon
+                    icon-name={explorerToggleIcon}
+                    alternative-text={explorerToggleLabel}
+                    title={explorerToggleLabel}
+                    variant="border-filled"
+                    onclick={handleToggleExplorer}
+                ></lightning-button-icon>
+            </div>
+            <div class="c23-shell__left-content">
+                <c-c23-permission-explorer show-summary="false" onselectionchange={handleSelectionChange}></c-c23-permission-explorer>
+            </div>
+        </div>
+
+        <div class="c23-shell__right">
+            <div class="c23-shell__workspace">
+                <div class="c23-shell__summary-bar slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                    <div class="c23-shell__summary-context">
+                        <div class="c23-shell__summary-path">{selectionContextText}</div>
+                        <template lwc:if={hasSummaryCountsText}>
+                            <div class="c23-shell__summary-counts">{summaryCountsText}</div>
+                        </template>
+                    </div>
+
+                    <div class="c23-shell__summary-actions">
+                        <template lwc:if={showDensityToggle}>
+                            <div class="c23-shell__density">
+                                <span class="c23-shell__density-label">{labels.density}</span>
+                                <div class="c23-shell__density-toggle" role="group" aria-label={labels.density}>
+                                    <button
+                                        class={densityComfortableClass}
+                                        data-density="comfortable"
+                                        onclick={handleDensityChange}
+                                        type="button"
+                                    >
+                                        {labels.densityComfortable}
+                                    </button>
+                                    <button
+                                        class={densityCompactClass}
+                                        data-density="compact"
+                                        onclick={handleDensityChange}
+                                        type="button"
+                                    >
+                                        {labels.densityCompact}
+                                    </button>
+                                </div>
+                            </div>
+                        </template>
+
+                        <template lwc:if={showGlobalActionButtons}>
+                            <span class={pendingBadgeClass}>{pendingBadgeText}</span>
+                            <lightning-button-icon
+                                icon-name="utility:refresh"
+                                variant="border-filled"
+                                alternative-text={labels.reset}
+                                title={labels.reset}
+                                onclick={handleReset}
+                                disabled={isResetDisabled}
+                            ></lightning-button-icon>
+                            <lightning-button
+                                label={labels.apply}
+                                variant={saveVariant}
+                                onclick={handleSave}
+                                disabled={isSaveDisabled}
+                            ></lightning-button>
+                        </template>
+
+                        <template lwc:if={showAssignmentManager}>
+                            <lightning-button-icon
+                                icon-name="utility:user"
+                                variant="border-filled"
+                                alternative-text={labels.assignmentsTitle}
+                                title={labels.assignmentsTitle}
+                                onclick={handleOpenAssignments}
+                            ></lightning-button-icon>
+                        </template>
+
+                        <template lwc:if={showMigrationAction}>
+                            <lightning-button
+                                variant="neutral"
+                                label={labels.migrate}
+                                onclick={handleOpenMigrationWizard}
+                            ></lightning-button>
+                        </template>
+
+                        <template lwc:if={showDetailsToggle}>
+                            <lightning-button-icon
+                                icon-name={detailsToggleIcon}
+                                variant="bare"
+                                alternative-text={detailsToggleLabel}
+                                title={detailsToggleLabel}
+                                onclick={handleToggleDetails}
+                            ></lightning-button-icon>
+                        </template>
+                    </div>
+                </div>
+
+                <template lwc:if={showDetailsPanel}>
+                    <div class="c23-shell__details">
+                        <template lwc:if={hasSummaryRows}>
+                            <div class="c23-shell__details-grid">
+                                <template for:each={summaryRows} for:item="row">
+                                    <div key={row.key} class="c23-shell__detail-card">
+                                        <span class="c23-shell__detail-label">{row.label}</span>
+                                        <span class="c23-shell__detail-value">{row.value}</span>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+                        <template lwc:else>
+                            <div class="c23-shell__placeholder">{labels.rightPanePrompt}</div>
+                        </template>
+                    </div>
+                </template>
+
+                <div class="c23-shell__editor">
+                    <template lwc:if={showPermissionSetEditor}>
+                        <c-c23-permission-set-editor
+                            permission-set-id={selectedPermissionSetId}
+                            permission-set-name={selectedPermissionSetName}
+                            density={tableDensity}
+                            oneditorstatechange={handleEditorStateChange}
+                        ></c-c23-permission-set-editor>
+                    </template>
+
+                    <template lwc:if={showPermissionSetGroupEditor}>
+                        <c-c23-permission-set-group-editor
+                            permission-set-group-id={selectedPermissionSetGroupId}
+                            permission-set-group-name={selectedPermissionSetGroupName}
+                            density={tableDensity}
+                        ></c-c23-permission-set-group-editor>
+                    </template>
+
+                    <template lwc:if={showEditorPlaceholder}>
+                        <div class="c23-shell__placeholder">{labels.rightPanePrompt}</div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template lwc:if={isAssignmentsDialogOpen}>
+        <section role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container c23-shell__assignments-modal">
+                <header class="slds-modal__header">
+                    <lightning-button-icon
+                        icon-name="utility:close"
+                        variant="bare-inverse"
+                        alternative-text={labels.close}
+                        title={labels.close}
+                        onclick={handleCloseAssignments}
+                        class="slds-modal__close"
+                    ></lightning-button-icon>
+                    <h2 class="slds-text-heading_medium">{labels.assignmentsTitle}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_small c23-shell__assignments-content">
+                    <c-c23-assignment-manager
+                        target-id={assignmentTargetId}
+                        target-type={assignmentTargetType}
+                        target-name={assignmentTargetName}
+                        density={tableDensity}
+                    ></c-c23-assignment-manager>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label={labels.close} onclick={handleCloseAssignments}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <template lwc:if={isMigrationWizardOpen}>
+        <c-c23-profile-migration-wizard
+            profile-id={selectedProfileId}
+            profile-name={selectedProfileName}
+            source-permission-set-id={selectedProfilePermissionSetId}
+            density={tableDensity}
+            onclose={handleCloseMigrationWizard}
+        ></c-c23-profile-migration-wizard>
+    </template>
+</template>

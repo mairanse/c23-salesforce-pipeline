@@ -1,0 +1,161 @@
+.c23-mig__container {
+    max-width: 74rem;
+    width: 92%;
+}
+
+.c23-mig__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.c23-mig__content {
+    min-height: 30rem;
+}
+
+.c23-mig__stepper {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+}
+
+.c23-mig__step {
+    border: 1px solid #d8dde6;
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.78rem;
+    color: #3e3e3c;
+    background: #ffffff;
+}
+
+.c23-mig__step_active {
+    border-color: #2b6de7;
+    color: #0c2f6c;
+    background: #edf3ff;
+}
+
+.c23-mig__step_done {
+    border-color: #5a8ef0;
+    color: #16325c;
+}
+
+.c23-mig__section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.c23-mig__summary-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.6rem;
+    border: 1px solid #eef1f6;
+    border-radius: 0.35rem;
+    padding: 0.35rem 0.55rem;
+    background: #fbfcff;
+}
+
+.c23-mig__summary-label {
+    color: #3e3e3c;
+    font-size: 0.8rem;
+}
+
+.c23-mig__summary-value {
+    color: #0b2959;
+    font-weight: 700;
+}
+
+.c23-mig__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.35rem 0.6rem;
+}
+
+.c23-mig__filters {
+    display: flex;
+    gap: 0.5rem 0.75rem;
+    flex-wrap: wrap;
+}
+
+.c23-mig__tab-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.c23-mig__tab {
+    border: 1px solid #d8dde6;
+    background: #ffffff;
+    border-radius: 0.35rem;
+    font-size: 0.78rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.c23-mig__tab_active {
+    border-color: #2b6de7;
+    background: #eef4ff;
+    color: #10306a;
+}
+
+.c23-mig__table-wrap {
+    max-height: 22rem;
+    overflow: auto;
+}
+
+.density-comfortable table th,
+.density-comfortable table td {
+    padding: 0.45rem 0.5rem;
+    font-size: 0.82rem;
+}
+
+.density-compact table th,
+.density-compact table td {
+    padding: 0.24rem 0.38rem;
+    font-size: 0.76rem;
+}
+
+.c23-mig__empty {
+    color: #3e3e3c;
+    border: 1px dashed #d8dde6;
+    border-radius: 0.35rem;
+    padding: 0.45rem 0.55rem;
+}
+
+.c23-mig__status-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.c23-mig__warning-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.c23-mig__warning-list {
+    margin: 0;
+    padding-left: 1.15rem;
+}
+
+.c23-mig__spinner {
+    margin-top: 0.5rem;
+}
+
+.c23-mig__error {
+    margin-top: 0.55rem;
+    color: #ba0517;
+}
+
+.c23-mig__footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.c23-mig__footer-actions {
+    display: flex;
+    gap: 0.5rem;
+}

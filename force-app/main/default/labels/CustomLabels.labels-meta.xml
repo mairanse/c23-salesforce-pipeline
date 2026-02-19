@@ -1,0 +1,1928 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>c23_PS_App_ExplorerCollapse</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Collapse explorer action</shortDescription>
+        <value>Collapse Explorer</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_App_ExplorerExpand</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Expand explorer action</shortDescription>
+        <value>Expand Explorer</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_App_HideDetails</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hide details action</shortDescription>
+        <value>Hide Details</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_App_LeftPaneTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>App left pane title</shortDescription>
+        <value>Explorer</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_App_PlaceholderComingSoon</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Coming soon placeholder</shortDescription>
+        <value>Additional editors are planned in future slices.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_App_RightPanePrompt</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>App right pane prompt</shortDescription>
+        <value>Select a permission set group, permission set, or profile to continue.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_App_RightPaneTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>App right pane title</shortDescription>
+        <value>Dashboard</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_App_ShowDetails</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Show details action</shortDescription>
+        <value>Show Details</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_App_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>App title</shortDescription>
+        <value>Permission Studio</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_ApplyResult</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assignment apply result title</shortDescription>
+        <value>Assignment Result</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_ApplySuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assignment apply success</shortDescription>
+        <value>Assignment changes applied.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_AssignedUsers</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assigned users section title</shortDescription>
+        <value>Assigned Users</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_Column_Active</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assignments active column label</shortDescription>
+        <value>Active</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_Filter_ActiveOnly</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assignments active-only filter label</shortDescription>
+        <value>Active Users Only</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_Filter_Profile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assignments profile filter label</shortDescription>
+        <value>Profile</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_Hide</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hide assignments section label</shortDescription>
+        <value>Hide Assignments</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_LoadList</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assignments load list button label</shortDescription>
+        <value>Load List</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_PendingAdds</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pending assignment adds</shortDescription>
+        <value>Pending Adds</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_PendingRemoves</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pending assignment removes</shortDescription>
+        <value>Pending Removes</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_ProfileRemoveHint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Profile removal hint text</shortDescription>
+        <value>Profile unassignment is disabled. Assign users to a different profile to move them.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_ProfileRemoveNotSupported</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Profile remove not supported apply message</shortDescription>
+        <value>Profile assignments updated. Remove operations were skipped.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_SearchUsers</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search users input label</shortDescription>
+        <value>Find Users</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_Show</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Show assignments section label</shortDescription>
+        <value>Show Assignments</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_Subtitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assignments subtitle</shortDescription>
+        <value>Manage user assignments for the selected target.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assignments title</shortDescription>
+        <value>Assignments</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Assignments_UserListView</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assignments user list view filter label</shortDescription>
+        <value>User List View</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Changes_Column_Changed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit changes count column</shortDescription>
+        <value>Changed</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Changes_Column_Section</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit changes section column</shortDescription>
+        <value>Section</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Changes_Column_TargetName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit changes target name column</shortDescription>
+        <value>Target Name</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Changes_Column_TargetType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit changes target type column</shortDescription>
+        <value>Target Type</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Changes_Column_When</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit changes when column</shortDescription>
+        <value>When</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Changes_DateFrom</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit changes from date label</shortDescription>
+        <value>From</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Changes_DateTo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit changes to date label</shortDescription>
+        <value>To</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Changes_Load</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit changes load button</shortDescription>
+        <value>Load Changes</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Changes_NoRows</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit changes no rows message</shortDescription>
+        <value>No ledger events matched the filters.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Changes_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit changes section title</shortDescription>
+        <value>What Changed?</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Error_InvalidPermissionKey</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit invalid permission key error</shortDescription>
+        <value>The permission key is invalid.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Export_Changes</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit export changes button</shortDescription>
+        <value>Export Changes</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Export_WhoHas</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit export who has button</shortDescription>
+        <value>Export Who Has</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Source_PermissionSet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit source label for permission set</shortDescription>
+        <value>Permission Set</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Source_Profile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit source label for profile</shortDescription>
+        <value>Profile</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Subtitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit tab subtitle</shortDescription>
+        <value>Review current access and change history for the selected target.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit tab title</shortDescription>
+        <value>Audit</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_WhoHas_Column_Access</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit who has access column</shortDescription>
+        <value>Access</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_WhoHas_Column_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit who has name column</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_WhoHas_Column_Profile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit who has profile column</shortDescription>
+        <value>Profile</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_WhoHas_Column_Source</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit who has source column</shortDescription>
+        <value>Source</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_WhoHas_Column_Username</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit who has username column</shortDescription>
+        <value>Username</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_WhoHas_Key</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit selected permission key label</shortDescription>
+        <value>Permission Key</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_WhoHas_NoRows</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit who has no rows message</shortDescription>
+        <value>No users matched the selected permission key.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_WhoHas_Run</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit who has run button label</shortDescription>
+        <value>Run</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_WhoHas_Search</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit permission search label</shortDescription>
+        <value>Permission Search</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_WhoHas_SearchButton</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit permission search button</shortDescription>
+        <value>Search Keys</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Audit_WhoHas_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Audit who has section title</shortDescription>
+        <value>Who Has This Permission?</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Error_Internal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Internal error label</shortDescription>
+        <value>Unable to complete the request.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Error_InvalidAssignmentTarget</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid assignment target error</shortDescription>
+        <value>Assignment target is invalid.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Error_InvalidDesiredRows</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid desired rows error</shortDescription>
+        <value>Incoming desired state rows were invalid. Refresh and try again.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Error_InvalidPermissionSet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid permission set error</shortDescription>
+        <value>Permission set was not found or is invalid.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Error_InvalidPermissionSetGroup</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid permission set group error</shortDescription>
+        <value>Permission set group was not found or is invalid.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Error_NoDesiredRows</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No desired rows error</shortDescription>
+        <value>No desired state rows were provided.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Count_Assignments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assignment count label</shortDescription>
+        <value>Assignments</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Count_FieldPerms</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field permissions count label</shortDescription>
+        <value>Field Permissions</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Count_HasMuting</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PSG muting flag label</shortDescription>
+        <value>Has Muting Permission Set</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Count_ObjectPerms</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Object permissions count label</shortDescription>
+        <value>Object Permissions</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Count_PsgMembers</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PSG member count label</shortDescription>
+        <value>Member Permission Sets</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Count_SetupAccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Setup access count label</shortDescription>
+        <value>Setup Access</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Name label</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_PermissionSetGroups</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Permission set groups section</shortDescription>
+        <value>Permission Set Groups</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_PermissionSets</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Permission sets section</shortDescription>
+        <value>Permission Sets</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Profiles</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Profiles section</shortDescription>
+        <value>Profiles</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_RecentEmpty</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recently viewed empty state</shortDescription>
+        <value>No recent permission sets or profiles.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_RecentTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recently viewed section title</shortDescription>
+        <value>Recently Viewed</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_SearchResults</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Explorer search results title</shortDescription>
+        <value>Search Results</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_SummaryTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Summary card title</shortDescription>
+        <value>Summary</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Tab_Groups</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Explorer short groups tab label</shortDescription>
+        <value>Groups</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Tab_Profiles</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Explorer short profiles tab label</shortDescription>
+        <value>Profiles</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Tab_Recent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Explorer short recent tab label</shortDescription>
+        <value>Recent</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Tab_Sets</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Explorer short sets tab label</shortDescription>
+        <value>Sets</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Explorer title</shortDescription>
+        <value>Permission Explorer</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Type label</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Type_PermissionSet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Permission set type label</shortDescription>
+        <value>Permission Set</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Type_PermissionSetGroup</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Permission set group type label</shortDescription>
+        <value>Permission Set Group</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Explorer_Type_Profile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Profile type label</shortDescription>
+        <value>Profile</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_ApplySuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field apply success</shortDescription>
+        <value>Field permission changes applied.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_Column_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field column label</shortDescription>
+        <value>Field</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_Column_FieldApiName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field API column label</shortDescription>
+        <value>Field API Name</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_Column_Required</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field required column label</shortDescription>
+        <value>Required</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_Column_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field data type column label</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_Error_NoObjectSelected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field no object error</shortDescription>
+        <value>Select a valid object.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_NoObjectSelected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field matrix no object selected</shortDescription>
+        <value>Select an object to load field permissions.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_NoTabVisibilityForObject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No matching tab visibility row for object</shortDescription>
+        <value>No matching tab visibility setting was found for this object.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_Object</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field matrix object picker label</shortDescription>
+        <value>Object</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_Preset_None</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field preset no access</shortDescription>
+        <value>No Access</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_Preset_RE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field preset read and edit</shortDescription>
+        <value>Read + Edit</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_Preset_RO</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field preset read only</shortDescription>
+        <value>Read Only</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_RecordTypes_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Record types section title</shortDescription>
+        <value>Record Type Assignments</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_RecordTypes_Unsupported</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Record types unsupported message</shortDescription>
+        <value>Record type assignments require metadata API wiring and are not editable in this screen yet.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_Subtitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field matrix subtitle</shortDescription>
+        <value>Edit field-level permissions for the selected permission set.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_SwitchObjectConfirmLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirm object switch warning title</shortDescription>
+        <value>Discard pending changes?</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_SwitchObjectConfirmMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirm object switch warning message</shortDescription>
+        <value>Switching objects will discard unsaved Field Matrix changes for the current object.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Field_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field matrix title</shortDescription>
+        <value>Field Matrix</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_AccessDenied</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Permission Studio access denied</shortDescription>
+        <value>Access denied. Contact your Permission Studio administrator.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Add</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add button label</shortDescription>
+        <value>Add</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_All</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Generic all label</shortDescription>
+        <value>All</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Apply</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save button label</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_ApplyNoChangesDetected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Apply no changes detected text</shortDescription>
+        <value>No changes were applied. Refresh and try again.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Back</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>General back button label</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Cancel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>General cancel button label</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_ChangeNote</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Change note label</shortDescription>
+        <value>Save Changes</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_ConfirmSave</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save confirmation message</shortDescription>
+        <value>Note (Optional)</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Generic error label</shortDescription>
+        <value>Something went wrong. Try again.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Loading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Loading label</shortDescription>
+        <value>Loading...</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Name label</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Next</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>General next button label</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_No</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No label</shortDescription>
+        <value>No</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_NoPendingChanges</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No pending changes text</shortDescription>
+        <value>No pending changes.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_NoResults</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No results label</shortDescription>
+        <value>No results found.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_NoSelection</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No selection label</shortDescription>
+        <value>Select an item to continue.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_PendingChanges</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pending changes text</shortDescription>
+        <value>Pending Changes</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Preview</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Preview button label</shortDescription>
+        <value>Preview</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Profile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Profile label</shortDescription>
+        <value>Profile</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Refresh</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Refresh button label</shortDescription>
+        <value>Refresh</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Remove</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Remove button label</shortDescription>
+        <value>Remove</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Reset</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Reset button label</shortDescription>
+        <value>Reset</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Search</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search label</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_ToastErrorTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Toast error title</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_ToastSuccessTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Toast success title</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Username</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Username label</shortDescription>
+        <value>Username</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_General_Yes</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Yes label</shortDescription>
+        <value>Yes</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Ledger_MaxItems</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Max ledger items to store</shortDescription>
+        <value>200</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Ledger_Placeholder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ledger placeholder</shortDescription>
+        <value>Ledger UI will arrive in a later slice.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Ledger_RecordSaved</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ledger saved message</shortDescription>
+        <value>Change ledger entry created.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Ledger_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ledger title</shortDescription>
+        <value>Change Ledger</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Ledger_Truncated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ledger truncated message</shortDescription>
+        <value>Ledger items were truncated due to size limits.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Ledger_ViewRecord</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>View ledger record link label</shortDescription>
+        <value>View Change Ledger Record</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Action_Close</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration close action</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Action_Migrate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migrate action label</shortDescription>
+        <value>Migrate</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Action_Run</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Run migration action label</shortDescription>
+        <value>Run Migration</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_DefaultTargetName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration default target permission set label</shortDescription>
+        <value>Migrated Permission Set</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Error_InvalidAssignmentInput</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration invalid assignment input error</shortDescription>
+        <value>Assignment options are invalid.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Error_InvalidJob</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration invalid job error</shortDescription>
+        <value>The migration job was not found.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Error_InvalidProfile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration invalid profile error</shortDescription>
+        <value>The selected profile is invalid.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Error_InvalidProfileSource</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration missing profile owned permission set error</shortDescription>
+        <value>The profile-owned permission set was not found.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Error_SelectScope</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration error for missing scope selection</shortDescription>
+        <value>Select at least one migration scope.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Error_TargetMergeSelection</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration error for missing merge selection</shortDescription>
+        <value>Select a target permission set for merge mode.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Error_TargetName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration error for missing target name</shortDescription>
+        <value>Enter a target permission set name and API name.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Execute_AssignUsers</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration assign users option</shortDescription>
+        <value>Assign the new Permission Set to users currently on this profile</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Execute_BaseProfile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration base profile selector label</shortDescription>
+        <value>Base Profile</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Execute_Status</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration status label</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Execute_SwapUsers</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration swap users option</shortDescription>
+        <value>Switch users to a base profile after assignment</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Execute_TargetPermissionSet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration target permission set label</shortDescription>
+        <value>Target Permission Set</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_NoRows</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration no rows state</shortDescription>
+        <value>No preview rows matched the current filters.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Preview_Column_Key</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration preview key column</shortDescription>
+        <value>Permission</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Preview_Column_Result</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration preview result column</shortDescription>
+        <value>Result</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Preview_Column_Source</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration preview source column</shortDescription>
+        <value>Source</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Preview_Column_Target</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration preview target column</shortDescription>
+        <value>Target</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Preview_Filter_Access</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration preview access filter</shortDescription>
+        <value>Rows With Access</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Preview_Filter_Custom</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration preview custom filter</shortDescription>
+        <value>Custom Objects Only</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Preview_Filter_Differences</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration preview differences filter</shortDescription>
+        <value>Differences Only</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Preview_PlannedChanges</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration planned changes label</shortDescription>
+        <value>Planned Changes</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Scope_CustomOnly</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration custom objects filter</shortDescription>
+        <value>Custom objects only</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Scope_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration field scope label</shortDescription>
+        <value>Field Permissions</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Scope_GrantedOnly</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration granted only filter</shortDescription>
+        <value>Include only granted permissions</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Scope_Object</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration object scope label</shortDescription>
+        <value>Object Permissions</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Scope_Setup</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration setup scope label</shortDescription>
+        <value>Setup Access</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Scope_System</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration system scope label</shortDescription>
+        <value>System Permissions</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Scope_Tab</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration tab scope label</shortDescription>
+        <value>Tab Visibility</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_SourceProfile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Source profile label</shortDescription>
+        <value>Source Profile</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_StartSuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration start success toast</shortDescription>
+        <value>Migration job started.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Status_Completed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration completed status label</shortDescription>
+        <value>Completed</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Status_CompletedWithWarnings</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration completed with warnings status label</shortDescription>
+        <value>Completed With Warnings</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Status_Failed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration failed status label</shortDescription>
+        <value>Failed</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Status_Finalizing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration finalizing status label</shortDescription>
+        <value>Finalizing</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Status_Queued</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration queued status label</shortDescription>
+        <value>Queued</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Status_Running</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration running status label</shortDescription>
+        <value>Running</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Step_Execute</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration execute step title</shortDescription>
+        <value>Execute</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Step_Preview</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration preview step title</shortDescription>
+        <value>Preview</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Step_Scope</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration scope step title</shortDescription>
+        <value>Scope</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Step_Target</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration target step title</shortDescription>
+        <value>Target</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Target_MergePermissionSet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration merge target field label</shortDescription>
+        <value>Target Permission Set</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Target_MergeStrategy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration merge strategy label</shortDescription>
+        <value>Merge Strategy</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Target_MergeStrategyOverwrite</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration merge strategy overwrite</shortDescription>
+        <value>Overwrite (Mirror Profile)</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Target_MergeStrategyUnion</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration merge strategy union</shortDescription>
+        <value>Union (Add Missing Grants)</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Target_Mode</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration target mode label</shortDescription>
+        <value>Target</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Target_ModeCreate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration create target mode</shortDescription>
+        <value>Create Permission Set</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Target_ModeMerge</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration merge target mode</shortDescription>
+        <value>Merge Into Permission Set</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Target_PermissionSetApiName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration target permission set api field</shortDescription>
+        <value>Permission Set API Name</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Target_PermissionSetName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration target permission set name field</shortDescription>
+        <value>Permission Set Name</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration wizard title</shortDescription>
+        <value>Profile Migration</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Warn_FieldSkipped</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration warning for skipped field</shortDescription>
+        <value>A field permission row was skipped because the field is unavailable.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Warn_TargetApiAdjusted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration warning for target API name adjustment</shortDescription>
+        <value>Target API name already existed. A unique API name was generated.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_MIG_Warnings_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration warnings title</shortDescription>
+        <value>Warnings</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_After</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>After label</shortDescription>
+        <value>After</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_ApplyBlocked</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Apply blocked text</shortDescription>
+        <value>Apply is disabled until a successful preview is available.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_ApplyResult</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Apply result title</shortDescription>
+        <value>Apply Result</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_ApplySuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Apply success text</shortDescription>
+        <value>Changes were applied and logged.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Before</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Before label</shortDescription>
+        <value>Before</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_ChangeNotePlaceholder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Change note placeholder</shortDescription>
+        <value>Optional note for the change ledger.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_ChangedCount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Changed count label</shortDescription>
+        <value>Changed Rows</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_ClearSelection</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear selection button label</shortDescription>
+        <value>Clear Selection</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Column_Create</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create column label</shortDescription>
+        <value>Create</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Column_Delete</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete column label</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Column_Edit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit column label</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Column_ModifyAll</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Modify all column label</shortDescription>
+        <value>Modify All</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Column_Object</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Object column label</shortDescription>
+        <value>Object</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Column_Read</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Read column label</shortDescription>
+        <value>Read</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Column_Select</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select column label</shortDescription>
+        <value>Select</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Column_ViewAll</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>View all column label</shortDescription>
+        <value>View All</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Column_ViewAllFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>View all fields column label</shortDescription>
+        <value>View All Fields</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Density</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Object matrix density label</shortDescription>
+        <value>Density</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Density_Comfortable</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Object matrix comfortable density</shortDescription>
+        <value>Comfortable</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Density_Compact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Object matrix compact density</shortDescription>
+        <value>Compact</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Filter_AccessOnly</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Access only filter label</shortDescription>
+        <value>Rows With Access</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Filter_CustomOnly</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom object filter label</shortDescription>
+        <value>Custom Objects Only</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Filter_DifferencesOnly</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Differences only filter label</shortDescription>
+        <value>Differences Only</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_InsertCount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Insert count label</shortDescription>
+        <value>Inserts</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_LastPreviewCount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Preview count label</shortDescription>
+        <value>Changes in Preview</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_NoPermissionSetSelected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No permission set selected</shortDescription>
+        <value>Select a permission set to load the Object Matrix.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_NoRows</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No rows text</shortDescription>
+        <value>No objects matched the current filters.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_ObjectApiName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Object API name label</shortDescription>
+        <value>Object API Name</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_PermissionSet</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Permission set label</shortDescription>
+        <value>Permission Set</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Preset_CRUD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CRUD preset label</shortDescription>
+        <value>CRUD</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Preset_CRUDVA</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CRUD VA preset label</shortDescription>
+        <value>CRUD+VA</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Preset_CRUDVAMA</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CRUD VA MA preset label</shortDescription>
+        <value>CRUD+VA+MA</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Preset_RO</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RO preset label</shortDescription>
+        <value>RO</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_PreviewNone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No preview changes text</shortDescription>
+        <value>No changes detected.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_PreviewReady</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Preview ready text</shortDescription>
+        <value>Preview completed. You can apply now.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_PreviewRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Preview required text</shortDescription>
+        <value>Run Preview before Apply.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_PreviewSamples</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Preview sample title</shortDescription>
+        <value>Preview Sample</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_PreviewSummary</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Preview summary title</shortDescription>
+        <value>Preview Summary</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_SearchObjects</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Object matrix search placeholder</shortDescription>
+        <value>Search objects...</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_SelectAll</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select all button label</shortDescription>
+        <value>Select All</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_SelectedCount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Selected rows label</shortDescription>
+        <value>Selected Rows</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Subtitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Object matrix subtitle</shortDescription>
+        <value>Edit object-level permissions for the selected permission set.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Object matrix title</shortDescription>
+        <value>Object Matrix</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_ObjectMatrix_UpdateCount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Update count label</shortDescription>
+        <value>Updates</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_PSG_ApplySuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PSG apply success message</shortDescription>
+        <value>Permission set group membership changes applied.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_PSG_AvailablePermissionSets</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Available permission sets title</shortDescription>
+        <value>Available Permission Sets</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_PSG_MembersTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Member permission sets title</shortDescription>
+        <value>Member Permission Sets</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_PSG_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PSG name label</shortDescription>
+        <value>Permission Set Group</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_PSG_PendingAdds</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PSG pending adds label</shortDescription>
+        <value>Pending Adds</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_PSG_PendingRemoves</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PSG pending removes label</shortDescription>
+        <value>Pending Removes</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_PSG_Status</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PSG status label</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_PSG_Subtitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PSG editor subtitle</shortDescription>
+        <value>Add or remove permission sets in the selected permission set group.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_PSG_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PSG editor title</shortDescription>
+        <value>Permission Set Group Membership</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Setup_ApplySuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Setup apply success</shortDescription>
+        <value>Setup access changes applied.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Setup_Column_ApiName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Setup API column</shortDescription>
+        <value>API Name</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Setup_Column_Enabled</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Setup enabled column</shortDescription>
+        <value>Enabled</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Setup_Column_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Setup name column</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Setup_Column_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Setup type column</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Setup_Filter_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Setup type filter label</shortDescription>
+        <value>Type Filter</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Setup_Filter_Type_All</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Setup type all</shortDescription>
+        <value>All</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Setup_Filter_Type_ApexClass</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Setup type apex class</shortDescription>
+        <value>Apex Class</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Setup_Filter_Type_CustomPermission</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Setup type custom permission</shortDescription>
+        <value>Custom Permission</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Setup_Preset_DisableSelected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Setup disable visible preset</shortDescription>
+        <value>Disable Visible</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Setup_Preset_EnableSelected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Setup enable visible preset</shortDescription>
+        <value>Enable Visible</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Setup_Subtitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Setup matrix subtitle</shortDescription>
+        <value>Edit setup access for Apex classes and custom permissions.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Setup_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Setup matrix title</shortDescription>
+        <value>Apex Class Access</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_System_ApplySuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System apply success</shortDescription>
+        <value>System permission changes applied.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_System_Column_ApiName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System permission API column</shortDescription>
+        <value>Permission API Name</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_System_Column_Enabled</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System permission enabled column</shortDescription>
+        <value>Enabled</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_System_Column_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System permission name column</shortDescription>
+        <value>Permission</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_System_Preset_DisableAll</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System preset disable visible</shortDescription>
+        <value>Disable Visible</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_System_Preset_EnableAll</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System preset enable visible</shortDescription>
+        <value>Enable Visible</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_System_Subtitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System matrix subtitle</shortDescription>
+        <value>Edit system permissions for the selected permission set.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_System_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System matrix title</shortDescription>
+        <value>System Permissions</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Tab_ApplySuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tab apply success</shortDescription>
+        <value>Tab visibility changes applied.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Tab_Column_ApiName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tab API column</shortDescription>
+        <value>Tab API Name</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Tab_Column_Tab</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tab label column</shortDescription>
+        <value>Tab</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Tab_Column_Visibility</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tab visibility column</shortDescription>
+        <value>Visibility</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Tab_Subtitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tab matrix subtitle</shortDescription>
+        <value>Edit tab visibility for the selected permission set.</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Tab_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tab matrix title</shortDescription>
+        <value>Tab Visibility</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Tab_Visibility_DefaultOff</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tab visibility default off</shortDescription>
+        <value>Default Off</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Tab_Visibility_DefaultOn</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tab visibility default on</shortDescription>
+        <value>Default On</value>
+    </labels>
+    <labels>
+        <fullName>c23_PS_Tab_Visibility_Hidden</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tab visibility hidden</shortDescription>
+        <value>Hidden</value>
+    </labels>
+</CustomLabels>

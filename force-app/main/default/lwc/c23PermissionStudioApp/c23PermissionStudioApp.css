@@ -1,0 +1,280 @@
+.c23-shell {
+    display: grid;
+    grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+    gap: 0.75rem;
+    height: clamp(36rem, 80vh, 88vh);
+    min-height: 36rem;
+    padding: 0.4rem;
+    border-radius: 0.75rem;
+    background: var(--lwc-colorBackgroundAlt, #f3f5f9);
+}
+
+.c23-shell--explorer-collapsed {
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+}
+
+.c23-shell__left,
+.c23-shell__right {
+    min-height: 0;
+}
+
+.c23-shell__left {
+    border-radius: 0.7rem;
+    background: transparent;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.c23-shell__left-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.2rem 0.15rem 0.35rem;
+    border-bottom: 0;
+    background: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.c23-shell__left-content {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.c23-shell__left--collapsed .c23-shell__title {
+    display: none;
+}
+
+.c23-shell__left--collapsed .c23-shell__left-content {
+    display: none;
+}
+
+.c23-shell__title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--lwc-colorTextTitle, #181818);
+    margin: 0;
+}
+
+.c23-shell__right {
+    display: flex;
+    flex-direction: column;
+}
+
+.c23-shell__workspace {
+    flex: 1;
+    min-height: 0;
+    border-radius: 0.75rem;
+    background: var(--lwc-colorBackground, #ffffff);
+    box-shadow: 0 4px 14px rgba(24, 24, 24, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.c23-shell__summary-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.42rem 0.65rem;
+    border-bottom: 1px solid var(--lwc-colorBorderSeparatorAlt, #e5e9f2);
+    background: var(--lwc-colorBackgroundAlt, #f8fafd);
+}
+
+.c23-shell__summary-context {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+}
+
+.c23-shell__summary-path {
+    color: var(--lwc-colorTextLabel, #444);
+    font-weight: 500;
+    font-size: 0.77rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.c23-shell__summary-counts {
+    color: var(--lwc-colorTextWeak, #5c5c5c);
+    font-size: 0.74rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.c23-shell__summary-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    flex-shrink: 0;
+}
+
+.c23-shell__density {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.c23-shell__density-label {
+    font-size: 0.7rem;
+    color: var(--lwc-colorTextWeak, #5c5c5c);
+    font-weight: 700;
+}
+
+.c23-shell__density-toggle {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.08rem;
+    border: 1px solid var(--lwc-colorBorder, #c9c9c9);
+    border-radius: 999px;
+    background: var(--lwc-colorBackground, #ffffff);
+}
+
+.c23-shell__density-button {
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--lwc-colorTextWeak, #5c5c5c);
+    font-size: 0.7rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.3rem 0.55rem;
+    cursor: pointer;
+}
+
+.c23-shell__density-button_active {
+    background: var(--lwc-brandAccessible, #0176d3);
+    color: #ffffff;
+}
+
+.c23-shell__density-button:focus-visible {
+    outline: 2px solid var(--lwc-brandAccessible, #0176d3);
+    outline-offset: 1px;
+}
+
+.c23-shell__pending-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--lwc-colorTextLabel, #444);
+    background: var(--lwc-colorBackgroundAlt, #f3f5f9);
+    border: 1px solid var(--lwc-colorBorder, #c9c9c9);
+    border-radius: 999px;
+    padding: 0.14rem 0.48rem;
+}
+
+.c23-shell__pending-badge--armed {
+    color: var(--lwc-brandTextLink, #014486);
+    background: #e9f3ff;
+    border-color: var(--lwc-brandAccessible, #0176d3);
+}
+
+.c23-shell__details {
+    border-bottom: 1px solid var(--lwc-colorBorderSeparatorAlt, #edf0f6);
+    padding: 0.45rem 0.65rem;
+    background: var(--lwc-colorBackgroundAlt, #fcfdff);
+}
+
+.c23-shell__details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.4rem;
+}
+
+.c23-shell__detail-card {
+    border-radius: 0.4rem;
+    padding: 0.35rem 0.45rem;
+    background: var(--lwc-colorBackground, #ffffff);
+    box-shadow: inset 0 0 0 1px var(--lwc-colorBorderSeparatorAlt, #dde6f2);
+}
+
+.c23-shell__detail-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--lwc-colorTextWeak, #5c5c5c);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.c23-shell__detail-value {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--lwc-colorTextDefault, #181818);
+    font-weight: 600;
+}
+
+.c23-shell__editor {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.c23-shell__editor > c-c23-permission-set-editor,
+.c23-shell__editor > c-c23-permission-set-group-editor {
+    display: block;
+    flex: 1;
+    min-height: 0;
+}
+
+.c23-shell__placeholder {
+    color: var(--lwc-colorTextWeak, #5c5c5c);
+    font-size: 0.82rem;
+    border-radius: 0.4rem;
+    padding: 0.65rem;
+    background: var(--lwc-colorBackgroundAlt, #fbfcff);
+    box-shadow: inset 0 0 0 1px var(--lwc-colorBorderSeparatorAlt, #cfd8e6);
+}
+
+.c23-shell__assignments-modal {
+    width: min(92vw, 1100px);
+    max-width: min(92vw, 1100px);
+    height: min(85vh, 860px);
+}
+
+.c23-shell__assignments-content {
+    height: calc(min(85vh, 860px) - 9rem);
+    overflow: auto;
+}
+
+@media (max-width: 1100px) {
+    .c23-shell {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        height: auto;
+    }
+
+    .c23-shell--explorer-collapsed {
+        grid-template-columns: 1fr;
+    }
+
+    .c23-shell__left--collapsed {
+        min-height: 3rem;
+    }
+
+    .c23-shell__left--collapsed .c23-shell__title {
+        display: block;
+    }
+
+    .c23-shell__summary-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .c23-shell__summary-actions {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}

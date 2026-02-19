@@ -1,0 +1,141 @@
+<template>
+    <div class="c23-audit">
+        <h3 class="c23-audit__title">{labels.title}</h3>
+        <div class="c23-audit__subtitle">{labels.subtitle}</div>
+
+        <section class="c23-audit__section">
+            <h4 class="c23-audit__heading">{labels.whoHasTitle}</h4>
+            <div class="c23-audit__controls">
+                <lightning-input
+                    type="text"
+                    label={labels.permissionSearch}
+                    value={permissionSearch}
+                    onchange={handlePermissionSearchChange}
+                ></lightning-input>
+                <lightning-button
+                    label={labels.searchKeys}
+                    onclick={handleSearchPermissionKeys}
+                    disabled={isSearchKeysDisabled}
+                ></lightning-button>
+            </div>
+            <div class="c23-audit__controls">
+                <lightning-combobox
+                    label={labels.permissionKey}
+                    value={selectedPermissionKey}
+                    options={permissionKeyOptions}
+                    onchange={handlePermissionKeyChange}
+                ></lightning-combobox>
+                <lightning-button
+                    label={labels.runWhoHas}
+                    onclick={handleRunWhoHas}
+                    disabled={isWhoHasDisabled}
+                    variant="brand"
+                ></lightning-button>
+                <lightning-button
+                    label={labels.exportWhoHas}
+                    onclick={handleExportWhoHas}
+                    disabled={isExportWhoHasDisabled}
+                ></lightning-button>
+            </div>
+
+            <template lwc:if={showWhoHasRows}>
+                <div class={whoHasTableWrapClass}>
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr>
+                                <th>{labels.columnName}</th>
+                                <th>{labels.columnUsername}</th>
+                                <th>{labels.columnProfile}</th>
+                                <th>{labels.columnAccess}</th>
+                                <th>{labels.columnSource}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={whoHasRows} for:item="row">
+                                <tr key={row.key}>
+                                    <td>{row.name}</td>
+                                    <td>{row.username}</td>
+                                    <td>{row.profileName}</td>
+                                    <td>{row.accessLevel}</td>
+                                    <td>{row.sourceSummary}</td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </template>
+            <template lwc:if={showNoWhoHasRows}>
+                <div class="c23-audit__empty">{labels.noWhoHasRows}</div>
+            </template>
+        </section>
+
+        <section class="c23-audit__section">
+            <h4 class="c23-audit__heading">{labels.changesTitle}</h4>
+            <div class="c23-audit__controls">
+                <lightning-input
+                    type="date"
+                    label={labels.dateFrom}
+                    value={dateFrom}
+                    onchange={handleDateFromChange}
+                ></lightning-input>
+                <lightning-input
+                    type="date"
+                    label={labels.dateTo}
+                    value={dateTo}
+                    onchange={handleDateToChange}
+                ></lightning-input>
+                <lightning-button
+                    label={labels.loadChanges}
+                    onclick={handleLoadChanges}
+                    disabled={isLoadChangesDisabled}
+                    variant="brand"
+                ></lightning-button>
+                <lightning-button
+                    label={labels.exportChanges}
+                    onclick={handleExportChanges}
+                    disabled={isExportChangesDisabled}
+                ></lightning-button>
+            </div>
+
+            <template lwc:if={showChangeRows}>
+                <div class={changesTableWrapClass}>
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr>
+                                <th>{labels.columnWhen}</th>
+                                <th>{labels.columnTargetType}</th>
+                                <th>{labels.columnTargetName}</th>
+                                <th>{labels.columnSection}</th>
+                                <th>{labels.columnChanged}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={changeRows} for:item="row">
+                                <tr key={row.key}>
+                                    <td>{row.createdDateDisplay}</td>
+                                    <td>{row.targetType}</td>
+                                    <td>{row.targetName}</td>
+                                    <td>{row.sectionName}</td>
+                                    <td>{row.changedCount}</td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </template>
+            <template lwc:if={showNoChangeRows}>
+                <div class="c23-audit__empty">{labels.noChangeRows}</div>
+            </template>
+        </section>
+
+        <template lwc:if={showSpinner}>
+            <div class="c23-audit__spinner">
+                <lightning-spinner size="small" alternative-text={labels.loading}></lightning-spinner>
+            </div>
+        </template>
+
+        <template lwc:if={hasErrorMessage}>
+            <div class="c23-audit__error">{errorMessage}</div>
+        </template>
+    </div>
+</template>

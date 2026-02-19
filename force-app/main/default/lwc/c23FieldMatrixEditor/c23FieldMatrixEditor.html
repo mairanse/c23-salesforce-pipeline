@@ -1,0 +1,235 @@
+<template>
+    <div class="c23-field">
+        <h3 class="c23-field__title">{labels.title}</h3>
+        <div class="c23-field__subtitle">{labels.subtitle}</div>
+
+        <template lwc:if={hasPermissionSet}>
+            <div class="c23-field__context">
+                <span class="c23-field__context-label">{labels.permissionSet}</span>
+                <span class="c23-field__context-value">{permissionSetDisplay}</span>
+            </div>
+
+            <div class="c23-field__workspace">
+                <div class="c23-field__sidebar">
+                    <div class="c23-field__object-picker">
+                        <lightning-input
+                            type="search"
+                            label={labels.object}
+                            value={objectSearchKey}
+                            onchange={handleObjectSearchChange}
+                        ></lightning-input>
+                        <div class="c23-field__object-list">
+                            <template lwc:if={hasFilteredObjectOptions}>
+                                <template for:each={filteredObjectOptions} for:item="item">
+                                    <button
+                                        key={item.key}
+                                        class={item.className}
+                                        data-value={item.value}
+                                        onclick={handleObjectSelect}
+                                    >
+                                        {item.label}
+                                    </button>
+                                </template>
+                            </template>
+                            <template lwc:else>
+                                <div class="c23-field__status">{labels.noResults}</div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c23-field__content">
+                    <template lwc:if={hasSelectedObject}>
+                        <div class="c23-field__object-access">
+                            <div class="c23-field__object-access-header">
+                                <h4 class="c23-field__object-access-title">{labels.objectAccessTitle}</h4>
+                                <span class={objectAccessBadgeClass}>{objectAccessPendingText}</span>
+                            </div>
+
+                            <template lwc:if={hasSelectedObjectPermissionRow}>
+                                <div class="c23-field__object-access-grid">
+                                    <template for:each={objectAccessToggleRows} for:item="item">
+                                        <lightning-input
+                                            key={item.key}
+                                            type="checkbox"
+                                            label={item.label}
+                                            checked={item.checked}
+                                            data-field={item.fieldName}
+                                            onchange={handleObjectAccessToggle}
+                                        ></lightning-input>
+                                    </template>
+                                </div>
+                            </template>
+                            <template lwc:else>
+                                <div class="c23-field__status">{labels.noResults}</div>
+                            </template>
+
+                            <div class="c23-field__tab-visibility">
+                                <span class="c23-field__tab-visibility-label">{labels.tabVisibilityTitle}</span>
+                                <template lwc:if={hasSelectedTabVisibilityRow}>
+                                    <lightning-combobox
+                                        variant="label-hidden"
+                                        label={labels.tabVisibilityLabel}
+                                        options={tabVisibilityOptions}
+                                        value={selectedTabVisibilityValue}
+                                        onchange={handleTabVisibilityChange}
+                                    ></lightning-combobox>
+                                </template>
+                                <template lwc:else>
+                                    <div class="c23-field__status">{labels.noTabVisibilityForObject}</div>
+                                </template>
+                            </div>
+
+                            <div class="c23-field__record-types">
+                                <span class="c23-field__record-types-title">{labels.recordTypesTitle}</span>
+                                <div class="c23-field__status">{labels.recordTypesUnsupported}</div>
+                            </div>
+                        </div>
+
+                        <div class="c23-field__filters">
+                            <lightning-input type="search" label={labels.search} value={rowSearchKey} onchange={handleRowSearchChange}></lightning-input>
+                            <lightning-input
+                                type="checkbox"
+                                label={labels.filterCustomOnly}
+                                checked={filterCustomOnly}
+                                onchange={handleFilterCustomOnly}
+                            ></lightning-input>
+                            <lightning-input
+                                type="checkbox"
+                                label={labels.filterDifferencesOnly}
+                                checked={filterDifferencesOnly}
+                                onchange={handleFilterDifferencesOnly}
+                            ></lightning-input>
+                            <span class="c23-field__selection-count">{pendingCountText}</span>
+                        </div>
+
+                        <div class="c23-field__presets">
+                            <lightning-button label={labels.presetRo} data-preset="RO" onclick={handlePresetApply}></lightning-button>
+                            <lightning-button label={labels.presetRe} data-preset="RE" onclick={handlePresetApply}></lightning-button>
+                            <lightning-button label={labels.presetNone} data-preset="NONE" onclick={handlePresetApply}></lightning-button>
+                        </div>
+
+                        <template lwc:if={showNoPendingChangesMessage}>
+                            <div class="c23-field__status">{labels.noPendingChanges}</div>
+                        </template>
+
+                        <template lwc:if={isLoading}>
+                            <div class="c23-field__loading">
+                                <lightning-spinner size="small" alternative-text={labels.loading}></lightning-spinner>
+                            </div>
+                        </template>
+
+                        <template lwc:if={hasVisibleRows}>
+                            <div class={tableWrapClass}>
+                                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                    <thead>
+                                        <tr class="c23-field__select-row">
+                                            <th colspan="4" class="c23-field__select-cell">
+                                                <lightning-input
+                                                    type="checkbox"
+                                                    label={labels.selectAll}
+                                                    checked={isAllPermissionsSelected}
+                                                    onchange={handleSelectAllToggle}
+                                                ></lightning-input>
+                                            </th>
+                                            <th>
+                                                <lightning-input
+                                                    type="checkbox"
+                                                    variant="label-hidden"
+                                                    label={selectAllReadLabel}
+                                                    checked={isReadColumnSelected}
+                                                    onchange={handleSelectAllReadToggle}
+                                                ></lightning-input>
+                                            </th>
+                                            <th>
+                                                <lightning-input
+                                                    type="checkbox"
+                                                    variant="label-hidden"
+                                                    label={selectAllEditLabel}
+                                                    checked={isEditColumnSelected}
+                                                    onchange={handleSelectAllEditToggle}
+                                                ></lightning-input>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>{labels.columnField}</th>
+                                            <th>{labels.columnFieldApiName}</th>
+                                            <th>{labels.columnType}</th>
+                                            <th>{labels.columnRequired}</th>
+                                            <th>{labels.columnRead}</th>
+                                            <th>{labels.columnEdit}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <template for:each={visibleRows} for:item="row">
+                                            <tr key={row.fieldPath}>
+                                                <td>{row.label}</td>
+                                                <td>{row.fieldApiName}</td>
+                                                <td>{row.dataType}</td>
+                                                <td>{row.requiredText}</td>
+                                                <td>
+                                                    <lightning-input
+                                                        type="checkbox"
+                                                        variant="label-hidden"
+                                                        data-key={row.fieldPath}
+                                                        data-field="permissionsRead"
+                                                        checked={row.permissionsRead}
+                                                        onchange={handlePermissionToggle}
+                                                    ></lightning-input>
+                                                </td>
+                                                <td>
+                                                    <lightning-input
+                                                        type="checkbox"
+                                                        variant="label-hidden"
+                                                        data-key={row.fieldPath}
+                                                        data-field="permissionsEdit"
+                                                        checked={row.permissionsEdit}
+                                                        onchange={handlePermissionToggle}
+                                                    ></lightning-input>
+                                                </td>
+                                            </tr>
+                                        </template>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </template>
+
+                        <template lwc:if={showNoRows}>
+                            <div class="c23-field__status">{labels.noResults}</div>
+                        </template>
+
+                        <div class="c23-field__actions c23-field__actions_footer">
+                            <lightning-button label={labels.reset} onclick={handleReset} disabled={isResetDisabled}></lightning-button>
+                            <lightning-button label={labels.apply} onclick={handleApply} disabled={isSaveDisabled} variant="brand"></lightning-button>
+                        </div>
+
+                        <template lwc:if={showApplyResult}>
+                            <div class="c23-field__result">
+                                <h4>{labels.applyResult}</h4>
+                                <div class="c23-field__status">{applyResultMessage}</div>
+                                <div class="c23-field__preview-row"><span>{labels.changedCount}</span><span>{applyChangedCountText}</span></div>
+                                <div class="c23-field__preview-row"><span>{labels.insertCount}</span><span>{applyInsertCountText}</span></div>
+                                <div class="c23-field__preview-row"><span>{labels.updateCount}</span><span>{applyUpdateCountText}</span></div>
+                                <template lwc:if={showLedgerTruncated}>
+                                    <div class="c23-field__status">{labels.ledgerTruncated}</div>
+                                </template>
+                                <template lwc:if={hasLedgerId}>
+                                    <div class="c23-field__ledger-link">
+                                        <a href={ledgerRecordUrl} target="_blank" rel="noopener">{labels.viewLedger}</a>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+                    </template>
+                    <template lwc:else>
+                        <div class="c23-field__status">{labels.noObjectSelected}</div>
+                    </template>
+                </div>
+            </div>
+
+            <template lwc:if={errorMessage}>
+                <div class="c23-field__error">{errorMessage}</div>
+            </template>
+        </template>
+    </div>
+</template>

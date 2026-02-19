@@ -1,0 +1,108 @@
+.c23-setup {
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.c23-setup__title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.c23-setup__subtitle {
+    color: #5c6b80;
+    font-size: 0.85rem;
+}
+
+.c23-setup__context {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.c23-setup__context-label {
+    font-weight: 600;
+}
+
+.c23-setup__filters,
+.c23-setup__selection,
+.c23-setup__presets,
+.c23-setup__actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.c23-setup__count {
+    font-size: 0.85rem;
+    color: #5c6b80;
+}
+
+.c23-setup__preview,
+.c23-setup__result {
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    background: #f8f9fb;
+}
+
+.c23-setup__preview-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.125rem 0;
+}
+
+.c23-setup__ledger-link {
+    margin-top: 0.4rem;
+}
+
+.c23-setup__table-wrap {
+    max-height: 24rem;
+    overflow: auto;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+}
+
+.density-comfortable table th,
+.density-comfortable table td {
+    padding: 0.45rem 0.5rem;
+    font-size: 0.82rem;
+}
+
+.density-compact table th,
+.density-compact table td {
+    padding: 0.24rem 0.38rem;
+    font-size: 0.76rem;
+}
+
+.c23-setup__select-row th {
+    background: #fafaf9;
+    border-bottom: 1px solid #d8dde6;
+}
+
+.c23-setup__select-cell {
+    min-width: 12rem;
+}
+
+.c23-setup__status {
+    font-size: 0.85rem;
+    color: #2e3e52;
+}
+
+.c23-setup__loading {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+.c23-setup__error {
+    color: #ba0517;
+    font-size: 0.85rem;
+}

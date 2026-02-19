@@ -1,0 +1,99 @@
+.c23-tab {
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.c23-tab__title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.c23-tab__subtitle {
+    color: #5c6b80;
+    font-size: 0.85rem;
+}
+
+.c23-tab__context {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.c23-tab__context-label {
+    font-weight: 600;
+}
+
+.c23-tab__filters,
+.c23-tab__selection,
+.c23-tab__presets,
+.c23-tab__actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.c23-tab__count {
+    font-size: 0.85rem;
+    color: #5c6b80;
+}
+
+.c23-tab__preview,
+.c23-tab__result {
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    background: #f8f9fb;
+}
+
+.c23-tab__preview-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.125rem 0;
+}
+
+.c23-tab__ledger-link {
+    margin-top: 0.4rem;
+}
+
+.c23-tab__table-wrap {
+    max-height: 24rem;
+    overflow: auto;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+}
+
+.density-comfortable table th,
+.density-comfortable table td {
+    padding: 0.45rem 0.5rem;
+    font-size: 0.82rem;
+}
+
+.density-compact table th,
+.density-compact table td {
+    padding: 0.24rem 0.38rem;
+    font-size: 0.76rem;
+}
+
+.c23-tab__status {
+    font-size: 0.85rem;
+    color: #2e3e52;
+}
+
+.c23-tab__loading {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+.c23-tab__error {
+    color: #ba0517;
+    font-size: 0.85rem;
+}

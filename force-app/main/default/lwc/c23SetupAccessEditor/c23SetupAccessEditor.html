@@ -1,0 +1,128 @@
+<template>
+    <div class="c23-setup">
+        <h3 class="c23-setup__title">{labels.title}</h3>
+        <div class="c23-setup__subtitle">{labels.subtitle}</div>
+
+        <template lwc:if={hasPermissionSet}>
+            <div class="c23-setup__context">
+                <span class="c23-setup__context-label">{labels.permissionSet}</span>
+                <span class="c23-setup__context-value">{permissionSetDisplay}</span>
+            </div>
+
+            <div class="c23-setup__filters">
+                <lightning-input type="search" label={labels.search} value={searchKey} onchange={handleSearchChange}></lightning-input>
+                <lightning-combobox
+                    label={labels.filterType}
+                    value={selectedTypeFilter}
+                    options={typeFilterOptions}
+                    onchange={handleTypeFilterChange}
+                ></lightning-combobox>
+                <lightning-input
+                    type="checkbox"
+                    label={labels.filterDifferencesOnly}
+                    checked={filterDifferencesOnly}
+                    onchange={handleFilterDifferencesOnly}
+                ></lightning-input>
+                <span class="c23-setup__count">{pendingCountText}</span>
+            </div>
+
+            <div class="c23-setup__presets">
+                <lightning-button label={labels.presetEnableVisible} onclick={handleEnableVisible}></lightning-button>
+                <lightning-button label={labels.presetDisableVisible} onclick={handleDisableVisible}></lightning-button>
+            </div>
+
+            <div class="c23-setup__actions">
+                <lightning-button label={labels.reset} onclick={handleReset} disabled={isResetDisabled}></lightning-button>
+                <lightning-button label={labels.apply} onclick={handleApply} disabled={isSaveDisabled} variant="brand"></lightning-button>
+            </div>
+
+            <template lwc:if={showNoPendingChangesMessage}>
+                <div class="c23-setup__status">{labels.noPendingChanges}</div>
+            </template>
+
+            <template lwc:if={isLoading}>
+                <div class="c23-setup__loading">
+                    <lightning-spinner size="small" alternative-text={labels.loading}></lightning-spinner>
+                </div>
+            </template>
+
+            <template lwc:if={hasVisibleRows}>
+                <div class={tableWrapClass}>
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr class="c23-setup__select-row">
+                                <th colspan="3" class="c23-setup__select-cell">
+                                    <lightning-input
+                                        type="checkbox"
+                                        label={labels.selectAll}
+                                        checked={isAllEnabledSelected}
+                                        onchange={handleSelectAllToggle}
+                                    ></lightning-input>
+                                </th>
+                                <th>
+                                    <lightning-input
+                                        type="checkbox"
+                                        variant="label-hidden"
+                                        label={selectAllEnabledLabel}
+                                        checked={isEnabledColumnSelected}
+                                        onchange={handleSelectAllEnabledToggle}
+                                    ></lightning-input>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>{labels.columnType}</th>
+                                <th>{labels.columnName}</th>
+                                <th>{labels.columnApiName}</th>
+                                <th>{labels.columnEnabled}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={visibleRows} for:item="row">
+                                <tr key={row.rowKey}>
+                                    <td>{row.setupEntityType}</td>
+                                    <td>{row.label}</td>
+                                    <td>{row.apiName}</td>
+                                    <td>
+                                        <lightning-input
+                                            type="checkbox"
+                                            variant="label-hidden"
+                                            name={row.rowKey}
+                                            checked={row.enabled}
+                                            onchange={handleEnabledToggle}
+                                        ></lightning-input>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </template>
+
+            <template lwc:if={showNoRows}>
+                <div class="c23-setup__status">{labels.noResults}</div>
+            </template>
+
+            <template lwc:if={showApplyResult}>
+                <div class="c23-setup__result">
+                    <h4>{labels.applyResult}</h4>
+                    <div class="c23-setup__status">{applyResultMessage}</div>
+                    <div class="c23-setup__preview-row"><span>{labels.changedCount}</span><span>{applyChangedCountText}</span></div>
+                    <div class="c23-setup__preview-row"><span>{labels.insertCount}</span><span>{applyInsertCountText}</span></div>
+                    <div class="c23-setup__preview-row"><span>{labels.updateCount}</span><span>{applyUpdateCountText}</span></div>
+                    <template lwc:if={showLedgerTruncated}>
+                        <div class="c23-setup__status">{labels.ledgerTruncated}</div>
+                    </template>
+                    <template lwc:if={hasLedgerId}>
+                        <div class="c23-setup__ledger-link">
+                            <a href={ledgerRecordUrl} target="_blank" rel="noopener">{labels.viewLedger}</a>
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+            <template lwc:if={errorMessage}>
+                <div class="c23-setup__error">{errorMessage}</div>
+            </template>
+        </template>
+    </div>
+</template>

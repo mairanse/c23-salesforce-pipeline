@@ -1,0 +1,176 @@
+<template>
+    <div class={explorerClass}>
+        <div class={leftPaneClass}>
+            <div class="c23-explorer__header">
+                <lightning-input
+                    type="search"
+                    variant="label-hidden"
+                    label={labels.search}
+                    placeholder={labels.search}
+                    value={searchKey}
+                    onchange={handleSearchChange}
+                ></lightning-input>
+                <lightning-button-icon
+                    icon-name="utility:refresh"
+                    alternative-text={labels.refresh}
+                    title={labels.refresh}
+                    onclick={handleRefresh}
+                ></lightning-button-icon>
+            </div>
+
+            <div class="c23-explorer__scroll">
+                <template lwc:if={hasSearchKey}>
+                    <section class="c23-explorer__section">
+                        <h3 class="c23-explorer__section-title">{labels.searchResults}</h3>
+                        <template lwc:if={hasSearchResultItems}>
+                            <template for:each={searchResultItems} for:item="item">
+                                <button
+                                    key={item.key}
+                                    class={item.buttonClass}
+                                    data-id={item.id}
+                                    data-type={item.type}
+                                    data-item-key={item.domKey}
+                                    onclick={handleItemClick}
+                                >
+                                    <span class="c23-explorer__item-header">
+                                        <span class={item.typeChipClass}>{item.typeLabel}</span>
+                                    </span>
+                                    <span class="c23-explorer__item-name">{item.displayName}</span>
+                                </button>
+                            </template>
+                        </template>
+                        <template lwc:if={showNoSearchResults}>
+                            <div class="c23-explorer__empty">{labels.noResults}</div>
+                        </template>
+                    </section>
+                </template>
+
+                <template lwc:else>
+                    <lightning-tabset
+                        class="c23-explorer__tabset"
+                        active-tab-value={activeTab}
+                        onactive={handleTabActive}
+                    >
+                        <lightning-tab label={labels.tabRecent} value="RECENT">
+                            <section class="c23-explorer__section">
+                                <template for:each={recentTabItems} for:item="item">
+                                    <button
+                                        key={item.key}
+                                        class={item.buttonClass}
+                                        data-id={item.id}
+                                        data-type={item.type}
+                                        data-item-key={item.domKey}
+                                        onclick={handleItemClick}
+                                    >
+                                        <span class="c23-explorer__item-header">
+                                            <span class={item.typeChipClass}>{item.typeLabel}</span>
+                                        </span>
+                                        <span class="c23-explorer__item-name">{item.displayName}</span>
+                                    </button>
+                                </template>
+                                <template lwc:if={showNoRecentTabItems}>
+                                    <div class="c23-explorer__empty">{labels.recentEmpty}</div>
+                                </template>
+                            </section>
+                        </lightning-tab>
+
+                        <lightning-tab label={labels.tabSets} value="PermissionSet">
+                            <section class="c23-explorer__section">
+                                <template for:each={permissionSetTabItems} for:item="item">
+                                    <button
+                                        key={item.key}
+                                        class={item.buttonClass}
+                                        data-id={item.id}
+                                        data-type={item.type}
+                                        data-item-key={item.domKey}
+                                        onclick={handleItemClick}
+                                    >
+                                        <span class="c23-explorer__item-header">
+                                            <span class={item.typeChipClass}>{item.typeLabel}</span>
+                                        </span>
+                                        <span class="c23-explorer__item-name">{item.displayName}</span>
+                                    </button>
+                                </template>
+                                <template lwc:if={showNoPermissionSetTabItems}>
+                                    <div class="c23-explorer__empty">{labels.noResults}</div>
+                                </template>
+                            </section>
+                        </lightning-tab>
+
+                        <lightning-tab label={labels.tabGroups} value="PermissionSetGroup">
+                            <section class="c23-explorer__section">
+                                <template for:each={permissionSetGroupTabItems} for:item="item">
+                                    <button
+                                        key={item.key}
+                                        class={item.buttonClass}
+                                        data-id={item.id}
+                                        data-type={item.type}
+                                        data-item-key={item.domKey}
+                                        onclick={handleItemClick}
+                                    >
+                                        <span class="c23-explorer__item-header">
+                                            <span class={item.typeChipClass}>{item.typeLabel}</span>
+                                        </span>
+                                        <span class="c23-explorer__item-name">{item.displayName}</span>
+                                    </button>
+                                </template>
+                                <template lwc:if={showNoPermissionSetGroupTabItems}>
+                                    <div class="c23-explorer__empty">{labels.noResults}</div>
+                                </template>
+                            </section>
+                        </lightning-tab>
+
+                        <lightning-tab label={labels.tabProfiles} value="Profile">
+                            <section class="c23-explorer__section">
+                                <template for:each={profileTabItems} for:item="item">
+                                    <button
+                                        key={item.key}
+                                        class={item.buttonClass}
+                                        data-id={item.id}
+                                        data-type={item.type}
+                                        data-item-key={item.domKey}
+                                        onclick={handleItemClick}
+                                    >
+                                        <span class="c23-explorer__item-header">
+                                            <span class={item.typeChipClass}>{item.typeLabel}</span>
+                                        </span>
+                                        <span class="c23-explorer__item-name">{item.displayName}</span>
+                                    </button>
+                                </template>
+                                <template lwc:if={showNoProfileTabItems}>
+                                    <div class="c23-explorer__empty">{labels.noResults}</div>
+                                </template>
+                            </section>
+                        </lightning-tab>
+                    </lightning-tabset>
+                </template>
+            </div>
+        </div>
+
+        <template lwc:if={showSummaryPanel}>
+            <div class="c23-explorer__right">
+                <h2 class="c23-explorer__summary-title">{labels.summaryTitle}</h2>
+                <template lwc:if={hasSelectedItem}>
+                    <template for:each={summaryRows} for:item="row">
+                        <div key={row.key} class="c23-explorer__summary-row">
+                            <span class="c23-explorer__summary-label">{row.label}</span>
+                            <span class="c23-explorer__summary-value">{row.value}</span>
+                        </div>
+                    </template>
+                </template>
+                <template lwc:else>
+                    <div class="c23-explorer__empty">{labels.noSelection}</div>
+                </template>
+            </div>
+        </template>
+    </div>
+
+    <template lwc:if={isLoading}>
+        <div class="c23-explorer__loading">
+            <lightning-spinner size="small" alternative-text={labels.loading}></lightning-spinner>
+        </div>
+    </template>
+    <template lwc:if={errorMessage}>
+        <div class="c23-explorer__error">{errorMessage}</div>
+    </template>
+</template>

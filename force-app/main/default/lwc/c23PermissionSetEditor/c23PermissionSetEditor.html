@@ -1,0 +1,81 @@
+<template>
+    <div class="c23-editor">
+        <div class="c23-editor__tabs" role="tablist">
+            <template for:each={tabItems} for:item="tab">
+                <button
+                    key={tab.value}
+                    class={tab.className}
+                    data-section={tab.value}
+                    role="tab"
+                    aria-selected={tab.isSelected}
+                    onclick={handleTabClick}
+                >
+                    {tab.label}
+                </button>
+            </template>
+        </div>
+
+        <div class="c23-editor__content">
+            <template lwc:if={showObjectEditor}>
+                <div class="c23-editor__panel">
+                    <c-c23-object-matrix-editor
+                        permission-set-id={permissionSetId}
+                        permission-set-name={permissionSetName}
+                        density={density}
+                        oneditorstatechange={handleObjectEditorStateChange}
+                    ></c-c23-object-matrix-editor>
+                </div>
+            </template>
+
+            <template lwc:if={showFieldEditor}>
+                <div class="c23-editor__panel">
+                    <c-c23-field-matrix-editor
+                        permission-set-id={permissionSetId}
+                        permission-set-name={permissionSetName}
+                        density={density}
+                    ></c-c23-field-matrix-editor>
+                </div>
+            </template>
+
+            <template lwc:if={showSystemEditor}>
+                <div class="c23-editor__panel">
+                    <c-c23-system-perm-editor
+                        permission-set-id={permissionSetId}
+                        permission-set-name={permissionSetName}
+                        density={density}
+                    ></c-c23-system-perm-editor>
+                </div>
+            </template>
+
+            <template lwc:if={showTabEditor}>
+                <div class="c23-editor__panel">
+                    <c-c23-tab-visibility-editor
+                        permission-set-id={permissionSetId}
+                        permission-set-name={permissionSetName}
+                        density={density}
+                    ></c-c23-tab-visibility-editor>
+                </div>
+            </template>
+
+            <template lwc:if={showSetupEditor}>
+                <div class="c23-editor__panel">
+                    <c-c23-setup-access-editor
+                        permission-set-id={permissionSetId}
+                        permission-set-name={permissionSetName}
+                        density={density}
+                    ></c-c23-setup-access-editor>
+                </div>
+            </template>
+
+            <template lwc:if={showAuditEditor}>
+                <div class="c23-editor__panel">
+                    <c-c23-compliance-auditor
+                        permission-set-id={permissionSetId}
+                        permission-set-name={permissionSetName}
+                        density={density}
+                    ></c-c23-compliance-auditor>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

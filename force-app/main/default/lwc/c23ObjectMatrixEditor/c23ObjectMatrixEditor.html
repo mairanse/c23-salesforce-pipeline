@@ -1,0 +1,256 @@
+<template>
+    <div class="c23-matrix">
+        <template lwc:if={showNoPermissionSet}>
+            <div class="c23-matrix__status">{labels.noPermissionSetSelected}</div>
+        </template>
+
+        <template lwc:else>
+            <div class={controlsClass}>
+                <div class="c23-matrix__controls-left">
+                    <lightning-input
+                        type="checkbox"
+                        label={labels.selectAll}
+                        checked={isAllPermissionsSelected}
+                        onchange={handleSelectAllToggle}
+                    ></lightning-input>
+                    <lightning-input
+                        type="checkbox"
+                        label={labels.filterCustomOnly}
+                        checked={filterCustomOnly}
+                        onchange={handleFilterCustomOnly}
+                    ></lightning-input>
+                    <lightning-input
+                        type="checkbox"
+                        label={labels.filterAccessOnly}
+                        checked={filterAccessOnly}
+                        onchange={handleFilterAccessOnly}
+                    ></lightning-input>
+                    <lightning-input
+                        type="checkbox"
+                        label={labels.filterDifferencesOnly}
+                        checked={filterDifferencesOnly}
+                        onchange={handleFilterDifferencesOnly}
+                    ></lightning-input>
+                </div>
+
+                <div class="c23-matrix__controls-right">
+                    <lightning-input
+                        type="search"
+                        variant="label-hidden"
+                        class="c23-matrix__search"
+                        label={labels.searchObjects}
+                        placeholder={labels.searchObjects}
+                        value={searchKeyInput}
+                        onchange={handleSearchInput}
+                    ></lightning-input>
+                </div>
+            </div>
+
+            <template lwc:if={isLoading}>
+                <div class="c23-matrix__loading">
+                    <lightning-spinner size="small" alternative-text={labels.loading}></lightning-spinner>
+                </div>
+            </template>
+
+            <template lwc:if={hasVisibleRows}>
+                <div class={tableShellClass}>
+                    <div class="c23-matrix__table-wrap" onscroll={handleTableScroll}>
+                        <table class="slds-table slds-table_cell-buffer c23-matrix__table">
+                            <thead>
+                                <tr>
+                                    <th class="c23-matrix__cell c23-matrix__cell_header c23-matrix__cell_sticky c23-matrix__cell_sticky_name">
+                                        {labels.columnObject}
+                                    </th>
+                                    <th class="c23-matrix__cell c23-matrix__cell_header c23-matrix__cell_sticky c23-matrix__cell_sticky_api">
+                                        {labels.columnObjectApiName}
+                                    </th>
+                                    <th class="c23-matrix__cell c23-matrix__cell_header">
+                                        <div class="c23-matrix__header-toggle">
+                                            <span>{labels.columnRead}</span>
+                                            <lightning-input
+                                                type="checkbox"
+                                                variant="label-hidden"
+                                                label={selectAllReadLabel}
+                                                checked={isReadColumnSelected}
+                                                onchange={handleSelectAllReadToggle}
+                                            ></lightning-input>
+                                        </div>
+                                    </th>
+                                    <th class="c23-matrix__cell c23-matrix__cell_header">
+                                        <div class="c23-matrix__header-toggle">
+                                            <span>{labels.columnCreate}</span>
+                                            <lightning-input
+                                                type="checkbox"
+                                                variant="label-hidden"
+                                                label={selectAllCreateLabel}
+                                                checked={isCreateColumnSelected}
+                                                onchange={handleSelectAllCreateToggle}
+                                            ></lightning-input>
+                                        </div>
+                                    </th>
+                                    <th class="c23-matrix__cell c23-matrix__cell_header">
+                                        <div class="c23-matrix__header-toggle">
+                                            <span>{labels.columnEdit}</span>
+                                            <lightning-input
+                                                type="checkbox"
+                                                variant="label-hidden"
+                                                label={selectAllEditLabel}
+                                                checked={isEditColumnSelected}
+                                                onchange={handleSelectAllEditToggle}
+                                            ></lightning-input>
+                                        </div>
+                                    </th>
+                                    <th class="c23-matrix__cell c23-matrix__cell_header">
+                                        <div class="c23-matrix__header-toggle">
+                                            <span>{labels.columnDelete}</span>
+                                            <lightning-input
+                                                type="checkbox"
+                                                variant="label-hidden"
+                                                label={selectAllDeleteLabel}
+                                                checked={isDeleteColumnSelected}
+                                                onchange={handleSelectAllDeleteToggle}
+                                            ></lightning-input>
+                                        </div>
+                                    </th>
+                                    <th class="c23-matrix__cell c23-matrix__cell_header">
+                                        <div class="c23-matrix__header-toggle">
+                                            <span>{labels.columnViewAllFields}</span>
+                                            <lightning-input
+                                                type="checkbox"
+                                                variant="label-hidden"
+                                                label={selectAllViewAllFieldsLabel}
+                                                checked={isViewAllFieldsColumnSelected}
+                                                onchange={handleSelectAllViewAllFieldsToggle}
+                                            ></lightning-input>
+                                        </div>
+                                    </th>
+                                    <th class="c23-matrix__cell c23-matrix__cell_header">
+                                        <div class="c23-matrix__header-toggle">
+                                            <span>{labels.columnViewAll}</span>
+                                            <lightning-input
+                                                type="checkbox"
+                                                variant="label-hidden"
+                                                label={selectAllViewAllLabel}
+                                                checked={isViewAllColumnSelected}
+                                                onchange={handleSelectAllViewAllToggle}
+                                            ></lightning-input>
+                                        </div>
+                                    </th>
+                                    <th class="c23-matrix__cell c23-matrix__cell_header">
+                                        <div class="c23-matrix__header-toggle">
+                                            <span>{labels.columnModifyAll}</span>
+                                            <lightning-input
+                                                type="checkbox"
+                                                variant="label-hidden"
+                                                label={selectAllModifyAllLabel}
+                                                checked={isModifyAllColumnSelected}
+                                                onchange={handleSelectAllModifyAllToggle}
+                                            ></lightning-input>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={visibleRows} for:item="row">
+                                    <tr key={row.apiName}>
+                                        <td class="c23-matrix__cell c23-matrix__cell_sticky c23-matrix__cell_sticky_name">{row.label}</td>
+                                        <td class="c23-matrix__cell c23-matrix__cell_sticky c23-matrix__cell_sticky_api">{row.apiName}</td>
+                                        <td class="c23-matrix__cell">
+                                            <lightning-input
+                                                type="checkbox"
+                                                variant="label-hidden"
+                                                name={row.apiName}
+                                                checked={row.permissionsRead}
+                                                onchange={handleReadToggle}
+                                            ></lightning-input>
+                                        </td>
+                                        <td class="c23-matrix__cell">
+                                            <lightning-input
+                                                type="checkbox"
+                                                variant="label-hidden"
+                                                name={row.apiName}
+                                                checked={row.permissionsCreate}
+                                                onchange={handleCreateToggle}
+                                            ></lightning-input>
+                                        </td>
+                                        <td class="c23-matrix__cell">
+                                            <lightning-input
+                                                type="checkbox"
+                                                variant="label-hidden"
+                                                name={row.apiName}
+                                                checked={row.permissionsEdit}
+                                                onchange={handleEditToggle}
+                                            ></lightning-input>
+                                        </td>
+                                        <td class="c23-matrix__cell">
+                                            <lightning-input
+                                                type="checkbox"
+                                                variant="label-hidden"
+                                                name={row.apiName}
+                                                checked={row.permissionsDelete}
+                                                onchange={handleDeleteToggle}
+                                            ></lightning-input>
+                                        </td>
+                                        <td class="c23-matrix__cell">
+                                            <lightning-input
+                                                type="checkbox"
+                                                variant="label-hidden"
+                                                name={row.apiName}
+                                                checked={row.permissionsViewAllFields}
+                                                onchange={handleViewAllFieldsToggle}
+                                            ></lightning-input>
+                                        </td>
+                                        <td class="c23-matrix__cell">
+                                            <lightning-input
+                                                type="checkbox"
+                                                variant="label-hidden"
+                                                name={row.apiName}
+                                                checked={row.permissionsViewAllRecords}
+                                                onchange={handleViewAllToggle}
+                                            ></lightning-input>
+                                        </td>
+                                        <td class="c23-matrix__cell">
+                                            <lightning-input
+                                                type="checkbox"
+                                                variant="label-hidden"
+                                                name={row.apiName}
+                                                checked={row.permissionsModifyAllRecords}
+                                                onchange={handleModifyAllToggle}
+                                            ></lightning-input>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </template>
+
+            <template lwc:if={showNoRows}>
+                <div class="c23-matrix__status">{labels.noRows}</div>
+            </template>
+
+            <template lwc:if={showApplyResult}>
+                <div class="c23-matrix__result">
+                    <h4>{labels.applyResult}</h4>
+                    <div class="c23-matrix__status">{applyResultMessage}</div>
+                    <div class="c23-matrix__preview-row"><span>{labels.changedCount}</span><span>{applyChangedCountText}</span></div>
+                    <div class="c23-matrix__preview-row"><span>{labels.insertCount}</span><span>{applyInsertCountText}</span></div>
+                    <div class="c23-matrix__preview-row"><span>{labels.updateCount}</span><span>{applyUpdateCountText}</span></div>
+                    <template lwc:if={showLedgerTruncated}>
+                        <div class="c23-matrix__status">{labels.ledgerTruncated}</div>
+                    </template>
+                    <template lwc:if={hasLedgerId}>
+                        <div class="c23-matrix__ledger-link">
+                            <a href={ledgerRecordUrl} target="_blank" rel="noopener">{labels.viewLedger}</a>
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+            <template lwc:if={errorMessage}>
+                <div class="c23-matrix__error">{errorMessage}</div>
+            </template>
+        </template>
+    </div>
+</template>

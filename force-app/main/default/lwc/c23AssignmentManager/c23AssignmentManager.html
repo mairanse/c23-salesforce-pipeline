@@ -1,0 +1,205 @@
+<template>
+    <div class="c23-assignment">
+        <h3 class="c23-assignment__title">{labels.title}</h3>
+        <div class="c23-assignment__subtitle">{labels.subtitle}</div>
+
+        <template lwc:if={hasTarget}>
+            <div class="c23-assignment__context">
+                <span class="c23-assignment__context-label">{labels.type}</span>
+                <span class="c23-assignment__context-value">{targetTypeLabel}</span>
+                <span class="c23-assignment__context-divider">|</span>
+                <span class="c23-assignment__context-label">{labels.name}</span>
+                <span class="c23-assignment__context-value">{targetDisplayName}</span>
+            </div>
+
+            <div class="c23-assignment__list-controls">
+                <lightning-combobox
+                    label={labels.userListView}
+                    value={selectedListViewApiName}
+                    options={listViewOptions}
+                    onchange={handleListViewChange}
+                ></lightning-combobox>
+                <lightning-button
+                    label={labels.loadList}
+                    onclick={handleLoadList}
+                    disabled={isLoadListDisabled}
+                ></lightning-button>
+            </div>
+
+            <div class="c23-assignment__search">
+                <lightning-input
+                    type="search"
+                    label={labels.searchUsers}
+                    value={lookupSearchKey}
+                    onchange={handleLookupSearchChange}
+                ></lightning-input>
+                <lightning-button
+                    label={labels.search}
+                    onclick={handleSearchUsers}
+                    disabled={isSearching}
+                ></lightning-button>
+            </div>
+
+            <div class="c23-assignment__filters">
+                <lightning-input
+                    type="checkbox"
+                    label={labels.filterActiveOnly}
+                    checked={filterActiveOnly}
+                    onchange={handleActiveOnlyChange}
+                ></lightning-input>
+                <lightning-combobox
+                    label={labels.filterProfile}
+                    value={selectedProfileFilter}
+                    options={profileFilterOptions}
+                    onchange={handleProfileFilterChange}
+                ></lightning-combobox>
+            </div>
+
+            <template lwc:if={hasSearchRows}>
+                <div class={searchTableWrapClass}>
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr>
+                                <th>{labels.name}</th>
+                                <th>{labels.username}</th>
+                                <th>{labels.profile}</th>
+                                <th>{labels.columnActive}</th>
+                                <th>{labels.add}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={decoratedSearchRows} for:item="row">
+                                <tr key={row.userId}>
+                                    <td>{row.name}</td>
+                                    <td>{row.username}</td>
+                                    <td>{row.profileName}</td>
+                                    <td>{row.activeText}</td>
+                                    <td>
+                                        <lightning-button
+                                            label={labels.add}
+                                            data-user-id={row.userId}
+                                            onclick={handleAddUser}
+                                            disabled={row.isAddDisabled}
+                                        ></lightning-button>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </template>
+
+            <template lwc:else>
+                <div class="c23-assignment__status">{labels.noResults}</div>
+            </template>
+
+            <div class="c23-assignment__assigned-header">
+                <h4 class="c23-assignment__section-title">{labels.assignedUsers}</h4>
+                <lightning-input
+                    type="search"
+                    label={labels.search}
+                    value={assignedSearchKey}
+                    onchange={handleAssignedSearchChange}
+                ></lightning-input>
+            </div>
+
+            <template lwc:if={hasVisibleAssignedRows}>
+                <div class={assignedTableWrapClass}>
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr>
+                                <th>{labels.name}</th>
+                                <th>{labels.username}</th>
+                                <th>{labels.profile}</th>
+                                <th>{labels.remove}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={visibleAssignedRows} for:item="row">
+                                <tr key={row.userId}>
+                                    <td>{row.name}</td>
+                                    <td>{row.username}</td>
+                                    <td>{row.profileName}</td>
+                                    <td>
+                                        <template lwc:if={row.canRemove}>
+                                            <lightning-button
+                                                label={labels.remove}
+                                                data-user-id={row.userId}
+                                                onclick={handleRemoveUser}
+                                            ></lightning-button>
+                                        </template>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </template>
+
+            <template lwc:else>
+                <div class="c23-assignment__status">{labels.noResults}</div>
+            </template>
+
+            <template lwc:if={supportsRemoval}>
+                <div class="c23-assignment__pending">
+                    <span>{pendingAddsText}</span>
+                    <span>{pendingRemovesText}</span>
+                </div>
+            </template>
+
+            <template lwc:else>
+                <div class="c23-assignment__status">{removalHint}</div>
+                <div class="c23-assignment__pending">
+                    <span>{pendingAddsText}</span>
+                </div>
+            </template>
+
+            <div class="c23-assignment__actions">
+                <lightning-button
+                    label={labels.reset}
+                    onclick={handleReset}
+                    disabled={isResetDisabled}
+                ></lightning-button>
+                <lightning-button
+                    label={labels.apply}
+                    onclick={handleApply}
+                    disabled={isApplyDisabled}
+                    variant="brand"
+                ></lightning-button>
+            </div>
+
+            <template lwc:if={showApplyResult}>
+                <div class="c23-assignment__result">
+                    <h4>{labels.applyResult}</h4>
+                    <div class="c23-assignment__status">{applyResultMessage}</div>
+                    <div class="c23-assignment__preview-row">
+                        <span>{labels.changedCount}</span>
+                        <span>{applyChangedCountText}</span>
+                    </div>
+                    <div class="c23-assignment__preview-row">
+                        <span>{labels.insertCount}</span>
+                        <span>{applyInsertCountText}</span>
+                    </div>
+                    <div class="c23-assignment__preview-row">
+                        <span>{labels.updateCount}</span>
+                        <span>{applyUpdateCountText}</span>
+                    </div>
+                    <template lwc:if={hasLedgerId}>
+                        <div class="c23-assignment__ledger-link">
+                            <a href={ledgerRecordUrl} target="_blank" rel="noopener">{labels.viewLedger}</a>
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+            <template lwc:if={isLoading}>
+                <div class="c23-assignment__loading">
+                    <lightning-spinner size="small" alternative-text={labels.loading}></lightning-spinner>
+                </div>
+            </template>
+            <template lwc:if={errorMessage}>
+                <div class="c23-assignment__error">{errorMessage}</div>
+            </template>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,150 @@
+<template>
+    <div class="c23-psg">
+        <h3 class="c23-psg__title">{labels.title}</h3>
+        <div class="c23-psg__subtitle">{labels.subtitle}</div>
+
+        <template lwc:if={hasGroup}>
+            <div class="c23-psg__context">
+                <span class="c23-psg__context-label">{labels.name}</span>
+                <span class="c23-psg__context-value">{groupDisplayName}</span>
+                <span class="c23-psg__context-divider">|</span>
+                <span class="c23-psg__context-label">{labels.status}</span>
+                <span class="c23-psg__context-value">{groupStatus}</span>
+            </div>
+
+            <div class="c23-psg__pending">
+                <span>{pendingAddsText}</span>
+                <span>{pendingRemovesText}</span>
+            </div>
+
+            <div class="c23-psg__columns">
+                <section class="c23-psg__column">
+                    <h4 class="c23-psg__section-title">{labels.availablePermissionSets}</h4>
+                    <lightning-input
+                        type="search"
+                        label={labels.search}
+                        value={availableSearchKey}
+                        onchange={handleAvailableSearchChange}
+                    ></lightning-input>
+
+                    <template lwc:if={hasAvailableRows}>
+                        <div class={availableTableWrapClass}>
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                <thead>
+                                    <tr>
+                                        <th>{labels.name}</th>
+                                        <th>{labels.add}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={availableRows} for:item="row">
+                                        <tr key={row.id}>
+                                            <td>{row.label}</td>
+                                            <td>
+                                                <lightning-button
+                                                    label={labels.add}
+                                                    data-permission-set-id={row.id}
+                                                    onclick={handleAddMember}
+                                                ></lightning-button>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </template>
+                    <template lwc:else>
+                        <div class="c23-psg__status">{labels.noResults}</div>
+                    </template>
+                </section>
+
+                <section class="c23-psg__column">
+                    <h4 class="c23-psg__section-title">{labels.membersTitle}</h4>
+                    <lightning-input
+                        type="search"
+                        label={labels.search}
+                        value={memberSearchKey}
+                        onchange={handleMemberSearchChange}
+                    ></lightning-input>
+
+                    <template lwc:if={hasMemberRows}>
+                        <div class={memberTableWrapClass}>
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                <thead>
+                                    <tr>
+                                        <th>{labels.name}</th>
+                                        <th>{labels.remove}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={memberRows} for:item="row">
+                                        <tr key={row.id}>
+                                            <td>{row.label}</td>
+                                            <td>
+                                                <lightning-button
+                                                    label={labels.remove}
+                                                    data-permission-set-id={row.id}
+                                                    onclick={handleRemoveMember}
+                                                ></lightning-button>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </template>
+                    <template lwc:else>
+                        <div class="c23-psg__status">{labels.noResults}</div>
+                    </template>
+                </section>
+            </div>
+
+            <div class="c23-psg__actions">
+                <lightning-button
+                    label={labels.reset}
+                    onclick={handleReset}
+                    disabled={isResetDisabled}
+                ></lightning-button>
+                <lightning-button
+                    label={labels.apply}
+                    onclick={handleApply}
+                    disabled={isApplyDisabled}
+                    variant="brand"
+                ></lightning-button>
+            </div>
+
+            <template lwc:if={showApplyResult}>
+                <div class="c23-psg__result">
+                    <h4>{labels.applyResult}</h4>
+                    <div class="c23-psg__status">{applyResultMessage}</div>
+                    <div class="c23-psg__preview-row">
+                        <span>{labels.changedCount}</span>
+                        <span>{applyChangedCountText}</span>
+                    </div>
+                    <div class="c23-psg__preview-row">
+                        <span>{labels.insertCount}</span>
+                        <span>{applyInsertCountText}</span>
+                    </div>
+                    <div class="c23-psg__preview-row">
+                        <span>{labels.updateCount}</span>
+                        <span>{applyUpdateCountText}</span>
+                    </div>
+                    <template lwc:if={hasLedgerId}>
+                        <div class="c23-psg__ledger-link">
+                            <a href={ledgerRecordUrl} target="_blank" rel="noopener">{labels.viewLedger}</a>
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+            <template lwc:if={isLoading}>
+                <div class="c23-psg__loading">
+                    <lightning-spinner size="small" alternative-text={labels.loading}></lightning-spinner>
+                </div>
+            </template>
+            <template lwc:if={errorMessage}>
+                <div class="c23-psg__error">{errorMessage}</div>
+            </template>
+        </template>
+    </div>
+</template>

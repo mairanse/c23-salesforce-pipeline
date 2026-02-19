@@ -1,0 +1,289 @@
+<template>
+    <section role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-fade-in-open c23-mig">
+        <div class="slds-modal__container c23-mig__container">
+            <header class="slds-modal__header c23-mig__header">
+                <h2 class="slds-text-heading_medium">{labels.title}</h2>
+                <lightning-button-icon
+                    icon-name="utility:close"
+                    variant="bare"
+                    alternative-text={labels.close}
+                    onclick={handleClose}
+                ></lightning-button-icon>
+            </header>
+
+            <div class="slds-modal__content slds-p-around_medium c23-mig__content">
+                <div class="c23-mig__stepper">
+                    <template for:each={stepRows} for:item="step">
+                        <span key={step.key} class={step.className}>{step.label}</span>
+                    </template>
+                </div>
+
+                <template lwc:if={isScopeStep}>
+                    <div class="c23-mig__section">
+                        <div class="c23-mig__summary-row">
+                            <span class="c23-mig__summary-label">{labels.sourceProfile}</span>
+                            <span class="c23-mig__summary-value">{profileName}</span>
+                        </div>
+                        <div class="c23-mig__grid">
+                            <lightning-input
+                                type="checkbox"
+                                checked={scopeObjectPermissions}
+                                label={labels.scopeObject}
+                                data-field="scopeObjectPermissions"
+                                onchange={handleScopeToggle}
+                            ></lightning-input>
+                            <lightning-input
+                                type="checkbox"
+                                checked={scopeFieldPermissions}
+                                label={labels.scopeField}
+                                data-field="scopeFieldPermissions"
+                                onchange={handleScopeToggle}
+                            ></lightning-input>
+                            <lightning-input
+                                type="checkbox"
+                                checked={scopeSystemPermissions}
+                                label={labels.scopeSystem}
+                                data-field="scopeSystemPermissions"
+                                onchange={handleScopeToggle}
+                            ></lightning-input>
+                            <lightning-input
+                                type="checkbox"
+                                checked={scopeTabVisibility}
+                                label={labels.scopeTab}
+                                data-field="scopeTabVisibility"
+                                onchange={handleScopeToggle}
+                            ></lightning-input>
+                            <lightning-input
+                                type="checkbox"
+                                checked={scopeSetupAccess}
+                                label={labels.scopeSetup}
+                                data-field="scopeSetupAccess"
+                                onchange={handleScopeToggle}
+                            ></lightning-input>
+                        </div>
+                        <div class="c23-mig__grid">
+                            <lightning-input
+                                type="checkbox"
+                                checked={scopeGrantedOnly}
+                                label={labels.scopeGrantedOnly}
+                                data-field="scopeGrantedOnly"
+                                onchange={handleScopeToggle}
+                            ></lightning-input>
+                            <lightning-input
+                                type="checkbox"
+                                checked={scopeCustomObjectsOnly}
+                                label={labels.scopeCustomOnly}
+                                data-field="scopeCustomObjectsOnly"
+                                onchange={handleScopeToggle}
+                            ></lightning-input>
+                        </div>
+                    </div>
+                </template>
+
+                <template lwc:if={isTargetStep}>
+                    <div class="c23-mig__section">
+                        <lightning-radio-group
+                            name="targetMode"
+                            label={labels.targetMode}
+                            options={targetModeOptions}
+                            value={targetMode}
+                            type="button"
+                            onchange={handleTargetModeChange}
+                        ></lightning-radio-group>
+
+                        <template lwc:if={isCreateMode}>
+                            <lightning-input
+                                type="text"
+                                label={labels.targetPermissionSetName}
+                                value={targetPermissionSetName}
+                                onchange={handleTargetNameChange}
+                            ></lightning-input>
+                            <lightning-input
+                                type="text"
+                                label={labels.targetPermissionSetApiName}
+                                value={targetPermissionSetApiName}
+                                onchange={handleTargetApiNameChange}
+                            ></lightning-input>
+                        </template>
+
+                        <template lwc:if={isMergeMode}>
+                            <lightning-combobox
+                                label={labels.targetMergePermissionSet}
+                                value={targetPermissionSetId}
+                                options={permissionSetOptions}
+                                onchange={handleTargetPermissionSetChange}
+                            ></lightning-combobox>
+                            <lightning-radio-group
+                                name="mergeStrategy"
+                                label={labels.targetMergeStrategy}
+                                options={mergeStrategyOptions}
+                                value={mergeStrategy}
+                                type="button"
+                                onchange={handleMergeStrategyChange}
+                            ></lightning-radio-group>
+                        </template>
+                    </div>
+                </template>
+
+                <template lwc:if={isPreviewStep}>
+                    <div class="c23-mig__section">
+                        <div class="c23-mig__summary-row">
+                            <span class="c23-mig__summary-label">{labels.previewPlannedChanges}</span>
+                            <span class="c23-mig__summary-value">{plannedChangesCountText}</span>
+                        </div>
+
+                        <div class="c23-mig__filters">
+                            <lightning-input
+                                type="checkbox"
+                                checked={previewDifferencesOnly}
+                                label={labels.previewFilterDifferences}
+                                onchange={handlePreviewDifferencesOnly}
+                            ></lightning-input>
+                            <lightning-input
+                                type="checkbox"
+                                checked={previewRowsWithAccess}
+                                label={labels.previewFilterAccess}
+                                onchange={handlePreviewAccessOnly}
+                            ></lightning-input>
+                            <lightning-input
+                                type="checkbox"
+                                checked={previewCustomObjectsOnly}
+                                label={labels.previewFilterCustom}
+                                onchange={handlePreviewCustomOnly}
+                            ></lightning-input>
+                        </div>
+
+                        <div class="c23-mig__tab-row">
+                            <template for:each={previewCategoryRows} for:item="row">
+                                <button
+                                    key={row.value}
+                                    class={row.className}
+                                    type="button"
+                                    data-value={row.value}
+                                    onclick={handlePreviewCategorySelect}
+                                >
+                                    {row.label}
+                                </button>
+                            </template>
+                        </div>
+
+                        <template lwc:if={showPreviewRows}>
+                            <div class={previewTableWrapClass}>
+                                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>{labels.previewColumnKey}</th>
+                                            <th>{labels.previewColumnSource}</th>
+                                            <th>{labels.previewColumnTarget}</th>
+                                            <th>{labels.previewColumnResult}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <template for:each={visiblePreviewRows} for:item="row">
+                                            <tr key={row.key}>
+                                                <td>{row.label}</td>
+                                                <td>{row.sourceValue}</td>
+                                                <td>{row.targetValue}</td>
+                                                <td>{row.resultValue}</td>
+                                            </tr>
+                                        </template>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </template>
+                        <template lwc:else>
+                            <div class="c23-mig__empty">{labels.noRows}</div>
+                        </template>
+                    </div>
+                </template>
+
+                <template lwc:if={isExecuteStep}>
+                    <div class="c23-mig__section">
+                        <lightning-input
+                            type="checkbox"
+                            checked={assignUsersFromProfile}
+                            label={labels.executeAssignUsers}
+                            onchange={handleAssignUsersToggle}
+                        ></lightning-input>
+                        <lightning-input
+                            type="checkbox"
+                            checked={switchUsersToBase}
+                            label={labels.executeSwapUsers}
+                            onchange={handleSwitchUsersToggle}
+                        ></lightning-input>
+                        <template lwc:if={showBaseProfileSelector}>
+                            <lightning-combobox
+                                label={labels.executeBaseProfile}
+                                value={baseProfileId}
+                                options={profileOptions}
+                                onchange={handleBaseProfileChange}
+                            ></lightning-combobox>
+                        </template>
+
+                        <template lwc:if={showJobStatus}>
+                            <div class="c23-mig__status-grid">
+                                <div class="c23-mig__summary-row">
+                                    <span class="c23-mig__summary-label">{labels.executeStatus}</span>
+                                    <span class="c23-mig__summary-value">{jobStatusLabel}</span>
+                                </div>
+                                <template lwc:if={showTargetPermissionSetLink}>
+                                    <div class="c23-mig__summary-row">
+                                        <span class="c23-mig__summary-label">{labels.executeTargetPermissionSet}</span>
+                                        <a href={targetPermissionSetUrl} target="_blank" rel="noopener">{jobTargetPermissionSetName}</a>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+
+                        <template lwc:if={showWarnings}>
+                            <h3 class="c23-mig__warning-title">{labels.warningsTitle}</h3>
+                            <ul class="c23-mig__warning-list">
+                                <template for:each={warnings} for:item="warning">
+                                    <li key={warning.key}>{warning.message}</li>
+                                </template>
+                            </ul>
+                        </template>
+                    </div>
+                </template>
+
+                <template lwc:if={showSpinner}>
+                    <div class="c23-mig__spinner">
+                        <lightning-spinner size="small" alternative-text={labels.loading}></lightning-spinner>
+                    </div>
+                </template>
+
+                <template lwc:if={hasErrorMessage}>
+                    <div class="c23-mig__error">{errorMessage}</div>
+                </template>
+            </div>
+
+            <footer class="slds-modal__footer c23-mig__footer">
+                <lightning-button label={labels.cancel} onclick={handleClose}></lightning-button>
+                <div class="c23-mig__footer-actions">
+                    <lightning-button
+                        label={labels.back}
+                        onclick={handleBack}
+                        disabled={isBackDisabled}
+                    ></lightning-button>
+                    <template lwc:if={showNextButton}>
+                        <lightning-button
+                            variant="brand"
+                            label={labels.next}
+                            onclick={handleNext}
+                            disabled={isNextDisabled}
+                        ></lightning-button>
+                    </template>
+                    <template lwc:if={showRunButton}>
+                        <lightning-button
+                            variant="brand"
+                            label={labels.runMigration}
+                            onclick={handleRunMigration}
+                            disabled={isRunDisabled}
+                        ></lightning-button>
+                    </template>
+                </div>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
