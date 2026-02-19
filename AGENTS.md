@@ -19,3 +19,114 @@ Build a new tool that lets an admin search for a Salesforce User and view a summ
 
 ## Current Objective
 Implement user search typeahead + selected user header display.
+
+---
+
+## Autonomous Loop Contract
+
+You must follow this loop for any implementation work:
+
+1) PLAN
+   - Write a short implementation plan in chat before editing files.
+
+2) IMPLEMENT
+   - Make the smallest possible changes needed for the current milestone.
+   - Do not modify unrelated files.
+   - Net-new only for this feature.
+
+3) VALIDATE
+   - Run: ./scripts/deploy-fast.sh dev
+
+4) IF DEPLOY FAILS
+   - Read the error carefully.
+   - Fix the root cause.
+   - Re-run deploy.
+   - Maximum 6 attempts per milestone.
+
+5) SUCCESS CONDITION
+   - Deploy succeeds.
+   - Summarize what changed.
+   - Commit with a clear message.
+   - Push to origin.
+
+### Safety Rules
+- Never commit directly to main.
+- Work only in the current branch.
+- Never commit unrelated metadata.
+- Compute values in JS (no template expressions).
+- Keep logging lightweight.
+
+
+---
+
+## Autonomous Loop Contract
+
+You must follow this loop for any implementation work:
+
+1) PLAN
+   - Write a short implementation plan in chat before editing files.
+
+2) IMPLEMENT
+   - Make the smallest possible changes needed for the current milestone.
+   - Do not modify unrelated files.
+   - Net-new only for this feature.
+
+3) VALIDATE
+   - Run: ./scripts/deploy-fast.sh dev
+
+4) IF DEPLOY FAILS
+   - Read the error carefully.
+   - Fix the root cause.
+   - Re-run deploy.
+   - Maximum 6 attempts per milestone.
+
+5) SUCCESS CONDITION
+   - Deploy succeeds.
+   - Summarize what changed.
+   - Commit with a clear message.
+   - Push to origin.
+
+### Safety Rules
+- Never commit directly to main.
+- Work only in the current branch.
+- Never commit unrelated metadata.
+- Compute values in JS (no template expressions).
+- Keep logging lightweight.
+
+
+---
+
+## Autonomous Loop Contract
+
+You must follow this loop for any implementation work:
+
+1) PLAN
+   - Write a short implementation plan in chat before editing files.
+
+2) IMPLEMENT
+   - Make the smallest possible changes needed for the current milestone.
+   - Do not modify unrelated files.
+   - Net-new only for this feature.
+
+3) VALIDATE
+   - Run: ./scripts/deploy-fast.sh dev
+
+4) IF DEPLOY FAILS
+   - Read the error carefully.
+   - Fix the root cause.
+   - Re-run deploy.
+   - Maximum 6 attempts per milestone.
+
+5) SUCCESS CONDITION
+   - Deploy succeeds.
+   - Summarize what changed.
+   - Commit with a clear message.
+   - Push to origin.
+
+### Safety Rules
+- Never commit directly to main.
+- Work only in the current branch.
+- Never commit unrelated metadata.
+- Compute values in JS (no template expressions).
+- Keep logging lightweight.
+
