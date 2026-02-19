@@ -112,33 +112,37 @@ public with sharing class c23_UserPermissionSummaryService {
         summary.permissionSetCount = summary.permissionSets.size();
 
         List<PermissionSetAssignment> groupAssignments = [
-            SELECT PermissionSetGroupId,
-                PermissionSetGroup.DeveloperName,
-                PermissionSetGroup.MasterLabel
+            SELECT PermissionSetGroupId
             FROM PermissionSetAssignment
             WHERE AssigneeId = :userId
                 AND PermissionSetGroupId != null
-            ORDER BY PermissionSetGroup.MasterLabel
         ];
 
         Set<Id> groupIds = new Set<Id>();
         for (PermissionSetAssignment groupAssignment : groupAssignments) {
             groupIds.add(groupAssignment.PermissionSetGroupId);
-            String groupName = groupAssignment.PermissionSetGroup != null
-                ? groupAssignment.PermissionSetGroup.MasterLabel
-                : null;
-            if (String.isBlank(groupName) && groupAssignment.PermissionSetGroup != null) {
-                groupName = groupAssignment.PermissionSetGroup.DeveloperName;
-            }
-
-            summary.permissionSetGroups.add(new AssignmentItem(
-                (String) groupAssignment.PermissionSetGroupId,
-                groupName
-            ));
         }
-        summary.permissionSetGroupCount = summary.permissionSetGroups.size();
 
         if (!groupIds.isEmpty()) {
+            List<PermissionSetGroup> groups = [
+                SELECT Id, MasterLabel, DeveloperName
+                FROM PermissionSetGroup
+                WHERE Id IN :groupIds
+                ORDER BY MasterLabel
+            ];
+
+            for (PermissionSetGroup groupRecord : groups) {
+                String groupName = groupRecord.MasterLabel;
+                if (String.isBlank(groupName)) {
+                    groupName = groupRecord.DeveloperName;
+                }
+
+                summary.permissionSetGroups.add(new AssignmentItem(
+                    (String) groupRecord.Id,
+                    groupName
+                ));
+            }
+
             List<PermissionSet> mutingSets = [
                 SELECT Id, Name
                 FROM PermissionSet
@@ -154,6 +158,8 @@ public with sharing class c23_UserPermissionSummaryService {
                 ));
             }
         }
+
+        summary.permissionSetGroupCount = summary.permissionSetGroups.size();
 
         summary.mutingPermissionSetCount = summary.mutingPermissionSets.size();
         return summary;
