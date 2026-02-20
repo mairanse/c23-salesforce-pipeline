@@ -1,0 +1,142 @@
+<template>
+    <lightning-card title="User Compare (Assignments)">
+        <div class="slds-p-around_medium">
+            <lightning-input
+                type="search"
+                label="Add user to compare"
+                value={query}
+                placeholder="Type name, username, or email"
+                oninput={handleInput}
+                onfocus={handleFocus}
+                onblur={handleBlur}
+                disabled={isLoading}
+            ></lightning-input>
+
+            <template if:true={maxUsersMessage}>
+                <div class="slds-text-color_warning slds-m-top_x-small">{maxUsersMessage}</div>
+            </template>
+
+            <template if:true={shouldShowDropdown}>
+                <div class="slds-box slds-m-top_x-small slds-p-around_none">
+                    <template if:true={errorMessage}>
+                        <div class="slds-text-color_error slds-p-around_small">{errorMessage}</div>
+                    </template>
+                    <template if:true={hasSearchResults}>
+                        <ul class="slds-has-dividers_bottom-space" role="listbox">
+                            <template for:each={searchResults} for:item="user">
+                                <li key={user.id} class="slds-item">
+                                    <button
+                                        class="slds-button slds-button_reset slds-text-align_left slds-p-around_small slds-size_full"
+                                        type="button"
+                                        data-id={user.id}
+                                        onclick={handleSelectUser}
+                                    >
+                                        <div class="slds-text-title_bold">{user.name}</div>
+                                        <div class="slds-text-body_small">{user.username}</div>
+                                    </button>
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                </div>
+            </template>
+
+            <template if:true={hasSelectedUsers}>
+                <div class="slds-m-top_small slds-grid slds-wrap slds-gutters_x-small">
+                    <template for:each={selectedUsers} for:item="user">
+                        <div key={user.id} class="slds-col">
+                            <lightning-pill label={user.name} data-id={user.id} onremove={handleRemoveUser}></lightning-pill>
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading comparison" size="small" class="slds-m-top_small"></lightning-spinner>
+            </template>
+        </div>
+
+        <template if:true={hasComparison}>
+            <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                <template for:each={comparisonSections} for:item="section">
+                    <div key={section.key} class="slds-box slds-theme_default slds-m-bottom_small">
+                        <h3 class="slds-text-heading_small slds-m-bottom_small">{section.label}</h3>
+
+                        <div class="slds-text-title_caps slds-m-bottom_x-small">Assignments by user</div>
+                        <div class="slds-grid slds-wrap slds-gutters slds-m-bottom_medium">
+                            <template for:each={section.userColumns} for:item="column">
+                                <div key={column.userId} class="slds-col slds-size_1-of-1 slds-large-size_1-of-4">
+                                    <div class="slds-text-title_bold">{column.userName} {column.countLabel}</div>
+                                    <template if:true={column.hasItems}>
+                                        <ul class="slds-list_dotted slds-p-left_medium">
+                                            <template for:each={column.items} for:item="item">
+                                                <li key={item.id}>{item.name}</li>
+                                            </template>
+                                        </ul>
+                                    </template>
+                                    <template if:false={column.hasItems}>
+                                        <div class="slds-text-color_weak">No assignments.</div>
+                                    </template>
+                                </div>
+                            </template>
+                        </div>
+
+                        <div class="slds-m-bottom_small">
+                            <div class="slds-text-title_caps">Common {section.commonCountLabel}</div>
+                            <template if:true={section.hasCommon}>
+                                <ul class="slds-list_dotted slds-p-left_medium">
+                                    <template for:each={section.common} for:item="item">
+                                        <li key={item.id}>{item.name}</li>
+                                    </template>
+                                </ul>
+                            </template>
+                            <template if:false={section.hasCommon}>
+                                <div class="slds-text-color_weak">No common items.</div>
+                            </template>
+                        </div>
+
+                        <div class="slds-grid slds-wrap slds-gutters">
+                            <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                                <div class="slds-text-title_caps slds-m-bottom_x-small">Unique (by user)</div>
+                                <template for:each={section.uniqueByUser} for:item="bucket">
+                                    <div key={bucket.userId} class="slds-m-bottom_small">
+                                        <div class="slds-text-title_bold">{bucket.userName} {bucket.countLabel}</div>
+                                        <template if:true={bucket.hasItems}>
+                                            <ul class="slds-list_dotted slds-p-left_medium">
+                                                <template for:each={bucket.items} for:item="item">
+                                                    <li key={item.id}>{item.name}</li>
+                                                </template>
+                                            </ul>
+                                        </template>
+                                        <template if:false={bucket.hasItems}>
+                                            <div class="slds-text-color_weak">No unique items.</div>
+                                        </template>
+                                    </div>
+                                </template>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                                <div class="slds-text-title_caps slds-m-bottom_x-small">Missing (by user)</div>
+                                <template for:each={section.missingByUser} for:item="bucket">
+                                    <div key={bucket.userId} class="slds-m-bottom_small">
+                                        <div class="slds-text-title_bold">{bucket.userName} {bucket.countLabel}</div>
+                                        <template if:true={bucket.hasItems}>
+                                            <ul class="slds-list_dotted slds-p-left_medium">
+                                                <template for:each={bucket.items} for:item="item">
+                                                    <li key={item.id}>{item.name}</li>
+                                                </template>
+                                            </ul>
+                                        </template>
+                                        <template if:false={bucket.hasItems}>
+                                            <div class="slds-text-color_weak">Nothing missing for this user.</div>
+                                        </template>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>
