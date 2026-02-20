@@ -1,25 +1,16 @@
-# Permission Studio – Design System (Lightweight)
+# C23 Experience Cloud Design System (Lightweight)
 
 ## Goals
-- Strong visual hierarchy
-- Max vertical space for data
-- Consistent spacing, sectioning, and header patterns
-- Salesforce-native feel (SLDS), but intentional and modern
+- Clear hierarchy, minimal wasted vertical space
+- Modern but SLDS-native
+- Consistent spacing and sectioning
 
-## Layout Patterns
-- Single compact header area: title/context + actions
-- Content region: internal scroll when lists are long
-- Avoid stacking multiple “page headers” inside a page
+## Patterns
+- Banner components: compact, dismissible, persistent
+- Hero: strong headline/subhead + primary CTA, optional secondary
+- Search: single search bar + grouped results + empty/loading states
+- Knowledge: facets left (desktop), collapsible on mobile
 
-## Spacing & Density
-- Prefer compact spacing for table/list heavy screens
-- Use SLDS utilities for spacing; avoid one-off CSS where possible
-
-## Components
-- Use consistent section blocks:
-  - section header: label + count
-  - section body: list with empty state
-
-## UX Rules
-- Don’t hide essential info behind too many clicks
-- Prefer progressive disclosure: show counts + first items, expand for the rest
+## Notes
+- Prefer SLDS spacing/utilities
+- Avoid deep nesting of cards; use 1–2 surface levels max
