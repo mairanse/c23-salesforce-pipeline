@@ -1,3 +1,23 @@
 <template>
-    
+    <template lwc:if={hasHero}>
+        <section class="slds-grid slds-wrap slds-p-around_large slds-theme_default c23-hero">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_7-of-12">
+                <h1 class="slds-text-heading_large">{title}</h1>
+                <p class="slds-m-top_small slds-text-body_regular">{subhead}</p>
+                <div class="slds-m-top_medium">
+                    <template lwc:if={hasPrimary}>
+                        <lightning-button variant="brand" label={primaryLabel} onclick={handlePrimary}></lightning-button>
+                    </template>
+                    <template lwc:if={hasSecondary}>
+                        <lightning-button class="slds-m-left_small" variant="neutral" label={secondaryLabel} onclick={handleSecondary}></lightning-button>
+                    </template>
+                </div>
+            </div>
+            <template lwc:if={hasImage}>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_5-of-12 slds-text-align_right">
+                    <img src={imageUrl} alt={title} class="c23-hero-image" />
+                </div>
+            </template>
+        </section>
+    </template>
 </template>

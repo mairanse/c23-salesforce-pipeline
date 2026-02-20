@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Default Hero</label>
+    <protected>false</protected>
+    <values><field>c23_ContentType__c</field><value xsi:type="xsd:string">Hero</value></values>
+    <values><field>c23_Audience__c</field><value xsi:type="xsd:string">All</value></values>
+    <values><field>c23_Title__c</field><value xsi:type="xsd:string">Find answers, manage requests, and move faster</value></values>
+    <values><field>c23_Subhead__c</field><value xsi:type="xsd:string">Use global search and AI-powered knowledge summaries to get what you need in seconds.</value></values>
+    <values><field>c23_PrimaryLabel__c</field><value xsi:type="xsd:string">Search Portal</value></values>
+    <values><field>c23_PrimaryUrl__c</field><value xsi:type="xsd:string">/s/</value></values>
+    <values><field>c23_SecondaryLabel__c</field><value xsi:type="xsd:string">Browse Knowledge</value></values>
+    <values><field>c23_SecondaryUrl__c</field><value xsi:type="xsd:string">/s/knowledge</value></values>
+    <values><field>c23_ImageUrl__c</field><value xsi:type="xsd:string">https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&amp;fit=crop&amp;w=800&amp;q=60</value></values>
+    <values><field>c23_IsActive__c</field><value xsi:type="xsd:boolean">true</value></values>
+    <values><field>c23_Priority__c</field><value xsi:type="xsd:double">80</value></values>
+    <values><field>c23_RoutePattern__c</field><value xsi:type="xsd:string">*</value></values>
+</CustomMetadata>
