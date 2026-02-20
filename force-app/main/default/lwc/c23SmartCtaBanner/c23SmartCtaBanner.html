@@ -1,3 +1,18 @@
 <template>
-    
+    <template lwc:if={isVisible}>
+        <article class="slds-box slds-theme_default c23-cta">
+            <div class="slds-grid slds-wrap slds-grid_vertical-align-center">
+                <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12">
+                    <h2 class="slds-text-heading_small">{title}</h2>
+                    <p class="slds-m-top_x-small">{message}</p>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12 slds-text-align_right">
+                    <lightning-button variant="brand" label={primaryLabel} onclick={handlePrimaryClick}></lightning-button>
+                    <template lwc:if={hasSecondaryCta}>
+                        <lightning-button class="slds-m-left_x-small" variant="neutral" label={secondaryLabel} onclick={handleSecondaryClick}></lightning-button>
+                    </template>
+                </div>
+            </div>
+        </article>
+    </template>
 </template>

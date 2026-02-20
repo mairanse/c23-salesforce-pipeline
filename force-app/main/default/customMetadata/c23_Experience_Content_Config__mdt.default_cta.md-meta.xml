@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Default CTA</label>
+    <protected>false</protected>
+    <values><field>c23_ContentType__c</field><value xsi:type="xsd:string">CTA</value></values>
+    <values><field>c23_Audience__c</field><value xsi:type="xsd:string">Authenticated</value></values>
+    <values><field>c23_Title__c</field><value xsi:type="xsd:string">Need help fast?</value></values>
+    <values><field>c23_Message__c</field><value xsi:type="xsd:string">Open a support case and get routed to the right team.</value></values>
+    <values><field>c23_PrimaryLabel__c</field><value xsi:type="xsd:string">Create Case</value></values>
+    <values><field>c23_PrimaryUrl__c</field><value xsi:type="xsd:string">/s/case/new</value></values>
+    <values><field>c23_IsActive__c</field><value xsi:type="xsd:boolean">true</value></values>
+    <values><field>c23_Priority__c</field><value xsi:type="xsd:double">90</value></values>
+    <values><field>c23_RoutePattern__c</field><value xsi:type="xsd:string">*</value></values>
+</CustomMetadata>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>c23_ContentType__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Content Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>Announcement</fullName><default>false</default><label>Announcement</label></value>
+            <value><fullName>CTA</fullName><default>false</default><label>CTA</label></value>
+            <value><fullName>Hero</fullName><default>false</default><label>Hero</label></value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,3 +1,18 @@
 <template>
-    
+    <template lwc:if={isVisible}>
+        <section class="slds-notify slds-notify_alert slds-theme_info c23-announcement" role="alert">
+            <span class="slds-assistive-text">Announcement</span>
+            <h2>
+                <strong>{title}</strong>
+                <span class="slds-m-left_x-small">{message}</span>
+            </h2>
+            <button
+                class="slds-button slds-button_icon slds-notify__close"
+                title="Dismiss"
+                onclick={handleDismiss}
+            >
+                <lightning-icon icon-name="utility:close" alternative-text="Dismiss" size="x-small"></lightning-icon>
+            </button>
+        </section>
+    </template>
 </template>
